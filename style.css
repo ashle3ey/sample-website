@@ -1,0 +1,454 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+/* Global Tags */
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: rgb(35, 35, 85);
+}
+
+span {
+  font-size: 0.9rem;
+  color: #757373;
+}
+
+h6 {
+  font-size: 1.1rem;
+  color: rgb(24, 24, 49);
+}
+
+
+/* Navigation */
+nav {
+  position: fixed;
+  width: 100%;
+  /* background-color: #fff; */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1vw 8vw;
+  /* box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.15); */
+  z-index: 1;
+  transition: 0.6s;
+}
+
+nav.sticky .navigation ul li a{
+  text-decoration: none;
+  color: rgb(21, 21, 100);
+  font-weight: 500;
+  transition: 0.3s ease;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  line-height: 30px;
+}
+
+nav.sticky{
+  background: #fff;
+}
+
+nav img{
+  width: 100px;
+  cursor: pointer;
+}
+
+nav .navigation {
+  display: flex;
+}
+
+#menu-btn {
+  width: 30px;
+  height: 30px;
+  display: none;
+}
+
+#menu-close {
+  display: none;
+}
+
+nav .navigation ul{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+nav .navigation ul li{
+  list-style: none;
+  margin-left: 30px;
+}
+
+nav .navigation ul li a{
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  transition: 0.3s ease;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  line-height: 30px;
+  position: relative;
+  padding-bottom: 5px;
+}
+
+/*nav .navigation ul li a:hover{
+  color: #fdc93b;
+}*/
+
+nav .navigation ul li a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: #FF1313;
+  transition: width 0.4s ease-in-out;
+}
+
+nav .navigation ul li a:hover::after {
+  width: 100%;
+}
+
+/* Home */
+#home{
+  background-image: linear-gradient(rgba(9, 5, 54, 0.3), rgba(5, 4, 46, 0.7)), url("pictures/bg3.jpg.crdownload");
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-top: 40px;
+}
+
+/*::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #FF1313; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #FF1313;
+}*/
+
+#home h2{
+  color: #fff;
+  font-size: 3rem;
+  letter-spacing: 1px;
+}
+
+#home p{
+  width: 50%;
+  color: #fff;
+  font-size: 1.2rem;
+  line-height: 25px;
+  font-family: "Poppins", sans-serif;
+}
+
+#home .info-details-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  gap: 30px; /* Adds space between the boxes */
+  margin-top: 80px;
+  flex-wrap: wrap; 
+}
+
+#home .box-icon {
+  display: flex;
+  align-items: center;
+  background-color: #f4f4f4; /* Light background color */
+  padding: 10px 12px; /* Padding inside each box */
+  border-radius: 8px; /* Rounded corners */
+  border: 1px solid #ddd; /* Light border for each box */
+  box-shadow: 0 2px 5px rgba(8, 7, 7, 0.1); /* Light shadow for depth */
+  transition: all 0.3s ease; /* Smooth transition for hover effect */
+}
+
+#home .box-icon:hover {
+  background-color: #e0e0e0; /* Darker background on hover */
+  transform: translateY(-3px); /* Slight lift effect on hover */
+}
+
+#home .box-icon i {
+  margin-right: 10px;
+  font-size: 18px; /* Icon size */
+  color: #333; /* Icon color */
+}
+
+#home .box-icon p {
+  margin: 0;
+  font-size: 14px;
+  color: #555; /* Text color */
+  line-height: 20px;
+  white-space: nowrap;
+}
+
+/* video */
+.video-container {
+  width: 100vw;  /* Full width */
+  height: 50vh;  /* Half of viewport height */
+  overflow: hidden;
+  position: relative;
+}
+
+video {
+  width: 100%;
+  height: 200%; /* Double the height */
+  object-fit: cover; /* Ensures it fills the width */
+  transform: scaleY(0.5); /* Shrinks to half its original height */
+  transform-origin: top;
+}
+
+
+/* history */
+#history {
+  padding: 5vw 8vw 0 8vw;
+  /*text-align: center;*/
+}
+
+.heading{
+  margin-bottom: 3rem;
+  padding-left: 1rem;
+  border-left: 1rem solid #FF1313;
+}
+
+
+/* flex-grid */
+/* History Section Styling */
+
+
+.history {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px 20px;
+  background-color: #e2e2e2;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.history .history-content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: flex-start;
+  gap: 30px; /* Add spacing between the text and the image grid */
+}
+
+.history .text-content {
+  flex: 1; /* Take up available space */
+}
+
+.history .heading {
+  font-size: 50px;
+  color: rgb(21, 21, 100);
+  margin-bottom: 20px;
+}
+
+.history p {
+  font-size: 16px;
+  color: #444;
+  line-height: 1.6;
+}
+
+/* Image Grid Styling */
+.image-grid {
+  columns: 3 250px;
+  grid-template-columns: repeat(2, 1fr); /* Two images per row */
+  gap: 20px;
+  flex: 1; /* Take up remaining space */
+}
+
+.image-grid img {
+  margin-bottom: 10px;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  border-radius: 10px; /* Optional: Add rounded corners to images */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow effect to images */
+  opacity: 0; /* Initially hide the images */
+  transform: translateY(50px); /* Start images below the view */
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* Animation when images come into view */
+.image-grid img.visible {
+  opacity: 1;
+  transform: translateY(0); /* Move to original position */
+}
+
+
+/* registration */
+
+/* experts */
+
+/* footer */
+
+/* About */
+
+/* Blog */
+
+/* Course_inner */
+
+/* contact */
+
+/* responsive */
+
+@media (max-width: 769px) {
+  nav {
+    padding: 15px 20px
+  }
+  nav img {
+    width: 90px;
+  }
+  #menu-btn {
+    display: initial;
+  }
+  #menu-close {
+    display: initial;
+    font-size: 1.6rem;
+    color: #fff;
+    padding: 30px 0 20px 20px;
+  }
+  nav .navigation ul {
+    position: absolute;
+    top: 0;
+    right: -220px;
+    width: 220px;
+    height: 100vh;
+    background: rgba(163, 2, 2, 0.9);
+    backdrop-filter: blur(4.5px);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    transition: 0.3s ease;
+  }
+
+  nav .navigation ul.active {
+    right: 0;
+  }
+  nav .navigation ul li {
+    padding: 20px 0 20px 40px;
+    margin-left: 0;
+  }
+  nav .navigation ul li a {
+    color: #fff;
+  }
+  
+  #home h2{
+    font-size: 3rem;
+  }
+
+  #home p{
+    width: 90%;
+  }
+
+  #home .info-details-row {
+    padding: 10px;
+    max-width: 100%; /* Full width on smaller screens */
+    margin: 20px; /* Adjust margin for mobile screens */
+  }
+  
+  .box-icon {
+    flex: 1 50%; /* Make each box take full width on smaller screens */
+    max-width: 100%; /* Ensure the boxes occupy full width */
+    padding: 12px;
+    gap: 12px; /* Reduce space between icon and text */
+}
+}
+
+
+/* timeline */
+
+
+/* For very small screens (mobile phones) */
+@media (max-width: 480px) {
+  .info-details-row {
+      padding: 15px;
+  }
+
+  .box-icon {
+      padding: 10px;
+      gap: 8px; /* Further reduce space between icon and text */
+  }
+
+  .box-icon i {
+      font-size: 18px; /* Even smaller icons for very small screens */
+  }
+
+  .box-icon p {
+      font-size: 12px; /* Smaller text for very small screens */
+  }
+}
+
+@media (max-width: 450px) {
+  html{
+    font-size: 50%;
+  }
+}
+
+/*history flex*/
+@media (max-width: 768px) {
+  /* For smaller screens (tablets and phones), stack the content vertically */
+  .history {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .history .heading {
+    font-size: 25px;
+  }
+
+  .history .history-content {
+      flex-direction: column;
+      align-items: center;
+      text-align: center; /* Center text and image */
+  }
+
+  .image-grid {
+      grid-template-columns: 1fr; /* Display one image per row */
+  }
+}
+
+/* video */
+/* Media Query for Mobile Devices */
+@media (max-width: 768px) {
+  .video-container {
+      height: 40vh; /* Slightly smaller for mobile screens */
+  }
+}
+
+/* Media Query for Smaller Phones */
+@media (max-width: 480px) {
+  .video-container {
+      height: 35vh; /* Further reduce height on very small screens */
+  }
+}
+
+@media (max-width: 475px) {
+}
+
+

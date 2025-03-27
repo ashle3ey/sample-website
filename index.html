@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tech2 etc Tutorial</title>
+
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+
+        <link rel="stylesheet" href="style.css">
+
+        <!--<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>-->
+
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/scrollreveal"></script>
+
+
+
+        <style>
+
+/* General styling for the timeline section */
+.timeline-content {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+}
+
+/* Style for the text content */
+.text-content {
+    flex: 1;
+    padding: 20px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+/* Style for the image grid centered in the text */
+.image-grid-center {
+    display: flex;
+    justify-content: center; /* Center the images horizontally */
+    gap: 15px; /* Space between the images */
+    margin: 20px 0; /* Space above and below the image grid */
+}
+
+.image-grid-center img {
+    width: 30%; /* Ensure each image takes up a third of the available space */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 100%; /* Prevent images from exceeding their container's width */
+}
+
+/* Make the layout stack vertically on smaller screens */
+@media screen and (max-width: 768px) {
+    .timeline-content {
+        flex-direction: column; /* Stack content vertically */
+        text-align: center;
+    }
+
+    .image-grid-center {
+        flex-direction: column; /* Stack images vertically on smaller screens */
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .text-content {
+        text-align: center;
+        padding: 15px;
+    }
+}
+
+/* Optional: For very small screens, adjust the padding for better fit */
+@media screen and (max-width: 480px) {
+    .text-content {
+        padding: 10px;
+    }
+
+    .image-grid-center img {
+        width: 90%; /* Adjust image width for smaller screens */
+    }
+}
+
+
+
+
+            #timeline {
+  padding: 5vw 8vw 0 8vw;
+  /*text-align: center;*/
+}
+
+           .timeline {
+
+            display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px 20px;
+  background-color: #e2e2e2;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+        }
+
+        .timeline .history-content{
+            display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: flex-start;
+  gap: 30px; /* Add spacing between the text and the image grid */
+        }
+
+      /* General styling for the timeline section */
+.timeline-content {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+}
+
+/* Style for the text content */
+.text-content {
+    flex: 1;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Style for the image grids */
+.image-grid-left, .image-grid-right {
+    flex: 1;
+    display: grid;
+    gap: 10px;
+    box-sizing: border-box;
+}
+
+/* Align images for the left side */
+.image-grid-left {
+    justify-items: start;
+}
+
+/* Align images for the right side */
+.image-grid-right {
+    justify-items: end;
+}
+
+/* Ensure images are responsive */
+.image-grid-left img, .image-grid-right img {
+    width: 100%; /* Make sure the images fill the container */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 100%; /* Prevent images from exceeding container width */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Hover effect: Scale the image slightly and add a shadow */
+.image-grid-left img:hover, .image-grid-right img:hover {
+    transform: scale(1.1); /* Slight zoom effect */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+}
+
+/* Make the layout stack vertically on smaller screens */
+@media screen and (max-width: 768px) {
+    .timeline-content {
+        flex-direction: column; /* Stack content vertically */
+        text-align: center;
+    }
+
+    .image-grid-left, .image-grid-right {
+        flex: 0 0 100%; /* Take full width */
+        justify-items: center;
+    }
+
+    .text-content {
+        text-align: center;
+        padding: 15px;
+    }
+}
+
+/* Optional: For very small screens, adjust the padding for better fit */
+@media screen and (max-width: 480px) {
+    .text-content {
+        padding: 10px;
+    }
+
+    .image-grid-left img, .image-grid-right img {
+        width: 100%; /* Ensure images take the full width of the container */
+    }
+}
+
+        </style>
+    </head>
+
+    <body>
+
+        <!-- Navigation -->
+        <nav>
+            <img src="pictures/logo.png" alt="">
+            <div class="navigation">
+                <ul>
+                    <i id="menu-close" class="fa-solid fa-x"></i>
+                    <li><a href="#">Who We Are</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Projects</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+                <img id="menu-btn" src="pictures/menu.png" alt="">
+            </div>
+        </nav>
+
+        <!-- Home -->
+        <section id="home">
+            <h2>First Strong Diversity</h2>
+            <p>Innovating the future that fits your lifestyle with fast and high quality works</p>
+            <div class="info-details-row">
+                <div class="box-icon">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <p>Taguig, City</p>
+                </div>
+                <div class="box-icon">
+                    <i class="fa-solid fa-phone"></i>
+                    <p>09XXXXXXXX</p>
+                </div>
+                <div class="box-icon">
+                    <i class="fa-solid fa-envelope"></i>
+                    <p>Juan@gmail.com</p>
+                </div>
+                <!--<i class="fa-solid fa-location-dot"></i>
+                <div class="info-detail address">Taguig, City</div>
+                <i class="fa-solid fa-phone"></i>
+                <div class="info-detail phone">09XXXXXXXX</div>
+                <i class="fa-solid fa-envelope"></i>     
+                <div class="info-detail mail">juan@gmail.com</div>-->
+            </div>
+        </section>
+
+        <!-- history -->
+      <!--  <section class="history" id="history">
+            <h1 class="heading">FSDV CONSTRUCTION COMPANY 
+                HISTORY</h1>
+            <p>FSDV is a local company that offers innovative solution in terms of structural strengthening, swimming pool construction, water features, waterproofing, painting and maintenance, residential construction, mechanical and electrical systems. It has the necessary resources to handle medium to big sized projects with the highly technical and well equipped professionals who can compete in the global market</p>
+        </section> -->
+
+        <section class="history" id="history">
+            <div class="history-content">
+                <div class="text-content">
+                    <h1 class="heading">FSDV CONSTRUCTION COMPANY</h1>
+                    <p>FSDV is a local company that offers innovative solutions in terms of structural strengthening, swimming pool construction, water features, waterproofing, painting and maintenance, residential construction, mechanical and electrical systems. It has the necessary resources to handle medium to big-sized projects with the highly technical and well-equipped professionals who can compete in the global market.</p>
+                </div>
+                <!-- Grid of images on the right side -->
+                <div class="image-grid">
+                    <img src="pictures/const-port.jpg" alt="Project Image 1">
+                    <img src="pictures/bg2.jpg" alt="Project Image 2">
+                    <img src="pictures/bg4.jpg" alt="Project Image 3">
+                    <img src="pictures/const-port1.jpg" alt="Project Image 4">
+                </div>
+            </div>
+        </section>
+
+        <div class="video-container">
+            <video autoplay muted loop>
+                <source src="video/Construction Company  Commercial Video.f609.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        
+        <!--<section class="timeline" id="timeline">
+            <div class="timeline-content">
+                <h1 class="heading">HISTORY</h1>
+                <div class="page active" id="page1">
+                    <div class="page-content">
+                        <img src="pictures/bg2.jpg" alt="Placeholder Image">
+                        <div>
+                            <h2>Page 1</h2>
+                            <p>First Strong Diversity Construction Services, also known as FSDV Construction Services, emerged from humble beginnings, echoing the experiences of countless other businesses. Since our inception in 2015, we have been dedicated to handling diverse construction projects while concurrently building our company. Drawing upon our collective experiences, we tirelessly pursued prospective clients, working diligently to secure projects and contracts.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="page" id="page2">
+                    <div class="page-content">
+                        <div>
+                            <h2>Page 2</h2>
+                            <p>First Strong Diversity Construction Services, also known as FSDV Construction Services, emerged from humble beginnings, echoing the experiences of countless other businesses. Since our inception in 2015, we have been dedicated to handling diverse construction projects while concurrently building our company. Drawing upon our collective experiences, we tirelessly pursued prospective clients, working diligently to secure projects and contracts.</p>
+                           
+                        </div>
+                        <img src="pictures/bg2.jpg" alt="Placeholder Image">
+                    </div>
+                </div>
+                <div class="page" id="page3">
+                    <h2>Page 3</h2>
+                    <p>The unprecedented challenges posed by the global pandemic in 2020 profoundly impacted our company, resulting in the temporary closure of our Taguig office. Undeterred, we remain confident in our ability to overcome adversity and eagerly anticipate the reopening of our office in the near future. Presently, our focus is on ongoing projects, including the construction of swimming pools and an upcoming waterproofing endeavor at Gold Residence. These ventures underscore our resilience and dedication to delivering high-quality services, even in the face of adversity.</p>
+                    <p>Looking ahead, we are poised for continued growth and success, propelled by the lessons learned from our journey thus far. As we navigate the ever-evolving landscape of the construction industry, we remain committed to maintaining the standards that have defined FSDV Construction Services.</p>
+                </div>
+            </div>
+        <div class="buttons">
+            <button id="back" disabled>Back</button>
+            <button id="next">Next</button>
+        </div>
+        </section>-->
+        <section class="timeline" id="timeline">
+            <h1 class="heading">HISTORY</h1>
+            <div class="timeline-content">
+                <!-- First Content: Images on the left -->
+               
+                <div class="text-content">
+                    <h1>Crafting a Future Through Diversity and Hard Work</h1>
+                    <p>First Strong Diversity Construction Services, also know as FSDV Construction Services, emerged from humble beginnings, echoing the experiences of countless other businesses. Since our inception in 2015, we have been dedicated to handling diverse construction projects while concurrently building our company. Drawing upon our collective experiences, we tirelessly pursued prospective clients, working diligently to secure projects and contracts..</p>
+                </div>
+                <div class="image-grid-left">
+                    <img src="pictures/bg5.jpg" alt="Project Image 1">
+                </div>
+            </div>
+        
+            <div class="timeline-content">
+                <!-- Second Content: Images on the right -->
+                <div class="image-grid-right">
+                    <img src="pictures/const-port.jpg" alt="Project Image 1">
+                </div>
+                <div class="text-content">
+                    <h1>Crafting a Future Through Diversity and Hard Work</h1>
+                    <p>Our portfolio expanded to encompass diverse projects, including fit-out assignments and notable collaborations with well-known brands like Mcdonald’s. Additionally, our proficiency extends to the meticulous renovation of residential buildings and flats alike.       </p>
+
+                        <p>In a pivotal step towards formalizing our commitment to professionalism and regulatory compliance, our company completed registration with the Department of Trade and Industry (DTI), and the Bureau of Internal Revenue (BIR) in 2019.
+                </div>
+            </div>
+        
+            <div class="timeline-content">
+                <!-- Third Content: Images in the middle of the text -->
+                <div class="text-content">
+                    <h1>Commitment to Quality and Growth During Tough Times</h1>
+                    <p>The unprecedented challenges posed by the global
+                        pandemic in 2020 profoundly impacted our company,
+                        resulting in the temporary closure of our Taguig
+                        office. Undeterred, we remain confident in our ability
+                        to overcome adversity and eagerly anticipate the
+                        reopening of our office in the near future.</p>
+                        <p>Presently, our focus is on ongoing projects, including
+                            the construction of swimming pools, and an upcoming
+                            waterproofing endeavor at Gold Residence. These
+                            ventures underscore our resilience and dedication to
+                            delivering high quality services, even in the face of
+                            adversity.</p>
+                    
+                    <!-- Image grid in the middle of the text -->
+                    <div class="image-grid-center">
+                        <img src="pictures/const-port.jpg" alt="Project Image 1">
+                        <img src="pictures/bg2.jpg" alt="Project Image 2">
+                        <img src="pictures/bg4.jpg" alt="Project Image 3">
+                    </div>
+            
+                    <p>Looking ahead, we are poised for continued growth and success, propelled by the lessons learned from our journey thus far. As we navigate the ever-evolving landscape of the construction industry, we remain committed to maintaining the standards that have defined FSDV Construction Services.</p>
+                </div>
+            </div>
+            
+        </section>
+
+        
+        <!-- Courses -->
+
+        <!-- Registration -->
+
+        <!-- Profiles -->
+
+        <!-- Footer -->
+
+
+        <script>
+ window.addEventListener("scroll", function(){
+            var header = document.querySelector("nav");
+            header.classList.toggle('sticky', window.scrollY > 0);
+        });
+
+
+
+            // Navaigation Bar
+            $('#menu-btn').click(function(){
+                $('nav .navigation ul').addClass('active')
+            });
+            $('#menu-close').click(function(){
+                $('nav .navigation ul').removeClass('active')
+            });
+
+            document.addEventListener("DOMContentLoaded", function () {
+    // Create an IntersectionObserver to detect when the images are in the viewport
+    const images = document.querySelectorAll(".image-grid img");
+
+    // Create the intersection observer
+    const observer = new IntersectionObserver(
+        (entries, observer) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    // Add 'visible' class to images when they come into view
+                    entry.target.classList.add("visible");
+                    observer.unobserve(entry.target); // Stop observing the image after it's in view
+                }
+            });
+        },
+        {
+            threshold: 0.5, // Trigger when 50% of the image is in the viewport
+        }
+    );
+
+    // Observe each image in the image grid
+    images.forEach((image) => {
+        observer.observe(image);
+    });
+});
+
+            ScrollReveal({ 
+                reset: true,
+                distance: '60px',
+                duration: 2000,
+                delay: 400
+            });
+
+            ScrollReveal().reveal('.heading', { delay: 200, origin: 'left' });
+            ScrollReveal().reveal('.text-content', { delay: 400, origin: 'bottom' });
+
+
+
+            let currentPage = 1;
+        const totalPages = 3;
+
+        function updatePage() {
+            document.querySelectorAll('.page').forEach((page, index) => {
+                page.classList.toggle('active', index + 1 === currentPage);
+            });
+            document.getElementById('back').disabled = currentPage === 1;
+            document.getElementById('next').disabled = currentPage === totalPages;
+        }
+
+        document.getElementById('next').addEventListener('click', () => {
+            if (currentPage < totalPages) {
+                currentPage++;
+                updatePage();
+            }
+        });
+
+        document.getElementById('back').addEventListener('click', () => {
+            if (currentPage > 1) {
+                currentPage--;
+                updatePage();
+            }
+        });
+        </script>
+
+
+
+    </body>
+
+</html>
