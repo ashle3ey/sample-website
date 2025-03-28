@@ -22,168 +22,107 @@
 
 
         <style>
+footer {
+    background: rgb(21, 21, 100); /* Transparent red overlay */
+    background-image: url('pictures/construction-bg.jpg'); /* Construction background */
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: multiply; /* Blends the red overlay with the image */
+    color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+}
 
-/* General styling for the timeline section */
-.timeline-content {
+.footer-container {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
     align-items: center;
-    margin: 20px 0;
-    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+    max-width: 1200px;
+    margin: auto;
 }
 
-/* Style for the text content */
-.text-content {
-    flex: 1;
-    padding: 20px;
-    box-sizing: border-box;
-    position: relative;
+.footer-logo {
+    text-align: center;
 }
 
-/* Style for the image grid centered in the text */
-.image-grid-center {
-    display: flex;
-    justify-content: center; /* Center the images horizontally */
-    gap: 15px; /* Space between the images */
-    margin: 20px 0; /* Space above and below the image grid */
+.footer-logo img {
+    width: 150px;
+    margin-bottom: 10px;
 }
 
-.image-grid-center img {
-    width: 30%; /* Ensure each image takes up a third of the available space */
-    height: auto; /* Maintain aspect ratio */
-    max-width: 100%; /* Prevent images from exceeding their container's width */
+.social-icons {
+    margin-top: 10px;
 }
 
-/* Make the layout stack vertically on smaller screens */
-@media screen and (max-width: 768px) {
-    .timeline-content {
-        flex-direction: column; /* Stack content vertically */
+.social-icons a {
+    color: #fff;
+    font-size: 24px;
+    margin: 0 10px;
+    transition: 0.3s;
+    text-decoration: none; /* Remove underline */
+}
+
+.social-icons a:hover {
+    color: #f0a500;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links ul li {
+    margin: 5px 0;
+}
+
+.footer-links ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-links ul li a:hover {
+    color: #f0a500;
+}
+
+.footer-contact p {
+    margin: 5px 0;
+}
+
+.footer-contact a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-contact a:hover {
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    margin-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    padding-top: 10px;
+    font-size: 14px;
+}
+
+/* 🔹 Responsive Adjustments */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
         text-align: center;
     }
 
-    .image-grid-center {
-        flex-direction: column; /* Stack images vertically on smaller screens */
-        justify-content: center;
-        gap: 10px;
+    .footer-logo img {
+        width: 120px;
     }
 
-    .text-content {
-        text-align: center;
-        padding: 15px;
+    .social-icons a {
+        font-size: 20px;
+        margin: 0 8px;
     }
 }
 
-/* Optional: For very small screens, adjust the padding for better fit */
-@media screen and (max-width: 480px) {
-    .text-content {
-        padding: 10px;
-    }
-
-    .image-grid-center img {
-        width: 90%; /* Adjust image width for smaller screens */
-    }
-}
-
-
-
-
-            #timeline {
-  padding: 5vw 8vw 0 8vw;
-  /*text-align: center;*/
-}
-
-           .timeline {
-
-            display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 50px 20px;
-  background-color: #e2e2e2;
-  flex-wrap: wrap; /* Allow wrapping on smaller screens */
-        }
-
-        .timeline .history-content{
-            display: flex;
-  justify-content: space-between;
-  width: 100%;
-  align-items: flex-start;
-  gap: 30px; /* Add spacing between the text and the image grid */
-        }
-
-      /* General styling for the timeline section */
-.timeline-content {
-    display: flex;
-    align-items: center;
-    margin: 20px 0;
-    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
-}
-
-/* Style for the text content */
-.text-content {
-    flex: 1;
-    padding: 20px;
-    box-sizing: border-box;
-}
-
-/* Style for the image grids */
-.image-grid-left, .image-grid-right {
-    flex: 1;
-    display: grid;
-    gap: 10px;
-    box-sizing: border-box;
-}
-
-/* Align images for the left side */
-.image-grid-left {
-    justify-items: start;
-}
-
-/* Align images for the right side */
-.image-grid-right {
-    justify-items: end;
-}
-
-/* Ensure images are responsive */
-.image-grid-left img, .image-grid-right img {
-    width: 100%; /* Make sure the images fill the container */
-    height: auto; /* Maintain aspect ratio */
-    max-width: 100%; /* Prevent images from exceeding container width */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effect */
-}
-
-/* Hover effect: Scale the image slightly and add a shadow */
-.image-grid-left img:hover, .image-grid-right img:hover {
-    transform: scale(1.1); /* Slight zoom effect */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
-}
-
-/* Make the layout stack vertically on smaller screens */
-@media screen and (max-width: 768px) {
-    .timeline-content {
-        flex-direction: column; /* Stack content vertically */
-        text-align: center;
-    }
-
-    .image-grid-left, .image-grid-right {
-        flex: 0 0 100%; /* Take full width */
-        justify-items: center;
-    }
-
-    .text-content {
-        text-align: center;
-        padding: 15px;
-    }
-}
-
-/* Optional: For very small screens, adjust the padding for better fit */
-@media screen and (max-width: 480px) {
-    .text-content {
-        padding: 10px;
-    }
-
-    .image-grid-left img, .image-grid-right img {
-        width: 100%; /* Ensure images take the full width of the container */
-    }
-}
 
         </style>
     </head>
@@ -254,12 +193,7 @@
             </div>
         </section>
 
-        <div class="video-container">
-            <video autoplay muted loop>
-                <source src="video/Construction Company  Commercial Video.f609.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-        </div>
+       
 
         
         <!--<section class="timeline" id="timeline">
@@ -312,7 +246,7 @@
             <div class="timeline-content">
                 <!-- Second Content: Images on the right -->
                 <div class="image-grid-right">
-                    <img src="pictures/const-port.jpg" alt="Project Image 1">
+                    <img src="pictures/bg2.jpg" alt="Project Image 1">
                 </div>
                 <div class="text-content">
                     <h1>Crafting a Future Through Diversity and Hard Work</h1>
@@ -352,6 +286,94 @@
             
         </section>
 
+
+        <section class="company-intro" id="company-intro">
+            <h1 class="heading">FSDV CONSTRUCTION COMENCES</h1>
+            <div class="company-intro-content">
+                <!-- Two side-by-side images, one with top margin -->
+                <div class="image-gallery">
+                    <img src="pictures/const-port.jpg" alt="Large Project Image" class="img-large">
+                    <img src="pictures/const-port1.jpg" alt="Offset Image" class="img-large offset-img">
+                </div>
+        
+                <!-- Text content with bullet points -->
+                <div class="company-description-box">
+                <div class="company-description">
+                    <ul class="bullet-points">
+                        <li>To become the most remarkable and respective
+                            company that will provide and set basis of
+                            standard specializing in all construction building
+                            .</li>
+                        <li>To provide high quality and cost efficient services.</li>
+                        <li>To continue making innovations and work
+                            excellency.</li>
+                        <li>To give and be committed to the progress of the
+                            future and welfare of employees.</li>
+                    </ul>
+                </div>
+                </div>
+            </div>
+        </section>
+        
+
+        <div class="video-container">
+            <video autoplay muted loop>
+                <source src="video/Construction Company  Commercial Video.f609.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="overlay-text">
+                <h2>VISION</h2>
+                <p>
+                    To become a General Contractor that can educate and train future engineers and
+                    professionals mastering their craft of specialization in construction projects.
+                </p>
+                <p>
+                    Providing excellent works beyond expectation that will help not just our client but the
+                    community within the organization.
+                </p>
+            </div>
+        </div>
+        
+        <footer>
+            <div class="footer-container">
+                <div class="footer-logo">
+                    <img src="pictures/logobgd.jpg" alt="Company Logo">
+                    <div class="social-icons">
+                        <a href="https://facebook.com" target="_blank">
+                            <i class="fa-brands fa-facebook"></i>
+                        </a>
+                        <a href="mailto:info@company.com">
+                            <i class="fa-solid fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+        
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">Who We Are</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Projects</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+        
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <p>Email: <a href="mailto:info@company.com">info@company.com</a></p>
+                    <p>Phone: +123 456 7890</p>
+                    <p>Address: 123 Street, City, Country</p>
+                </div>
+            </div>
+        
+            <div class="footer-bottom">
+                <p>&copy; 2025 FSDV | All Rights Reserved</p>
+            </div>
+        </footer>
+        
+        
+        
+        
         
         <!-- Courses -->
 

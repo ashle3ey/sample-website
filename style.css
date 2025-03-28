@@ -57,6 +57,7 @@ nav.sticky .navigation ul li a{
 
 nav.sticky{
   background: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 nav img{
@@ -207,20 +208,20 @@ nav .navigation ul li a:hover::after {
 }
 
 /* video */
-.video-container {
-  width: 100vw;  /* Full width */
-  height: 50vh;  /* Half of viewport height */
+/*.video-container {
+  width: 100vw;  
+  height: 50vh; 
   overflow: hidden;
   position: relative;
 }
 
 video {
   width: 100%;
-  height: 200%; /* Double the height */
-  object-fit: cover; /* Ensures it fills the width */
-  transform: scaleY(0.5); /* Shrinks to half its original height */
+  height: 200%; 
+  object-fit: cover; 
+  transform: scaleY(0.5); 
   transform-origin: top;
-}
+}*/
 
 
 /* history */
@@ -267,6 +268,12 @@ video {
   margin-bottom: 20px;
 }
 
+.heading {
+  font-size: 50px;
+  color: rgb(21, 21, 100);
+  margin-bottom: 20px;
+}
+
 .history p {
   font-size: 16px;
   color: #444;
@@ -297,6 +304,275 @@ video {
 .image-grid img.visible {
   opacity: 1;
   transform: translateY(0); /* Move to original position */
+}
+
+/* timeline */
+/* General styling for the timeline section */
+.timeline-content {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+  flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+}
+
+/* Style for the text content */
+.text-content {
+  flex: 1;
+  padding: 20px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+/* Style for the image grid centered in the text */
+.image-grid-center {
+  display: flex;
+  justify-content: center; /* Center the images horizontally */
+  gap: 15px; /* Space between the images */
+  margin: 20px 0; /* Space above and below the image grid */
+}
+
+.image-grid-center img {
+  width: 30%; /* Ensure each image takes up a third of the available space */
+  height: auto; /* Maintain aspect ratio */
+  max-width: 100%; /* Prevent images from exceeding their container's width */
+}
+
+/* Make the layout stack vertically on smaller screens */
+@media screen and (max-width: 768px) {
+  .timeline-content {
+      flex-direction: column; /* Stack content vertically */
+      text-align: center;
+  }
+
+  .image-grid-center {
+      flex-direction: column; /* Stack images vertically on smaller screens */
+      justify-content: center;
+      gap: 10px;
+  }
+
+  .text-content {
+      text-align: center;
+      padding: 15px;
+  }
+}
+
+/* Optional: For very small screens, adjust the padding for better fit */
+@media screen and (max-width: 480px) {
+  .text-content {
+      padding: 10px;
+  }
+
+  .image-grid-center img {
+      width: 90%; /* Adjust image width for smaller screens */
+  }
+}
+
+
+
+
+          #timeline {
+padding: 5vw 8vw 0 8vw;
+/*text-align: center;*/
+}
+
+         .timeline {
+
+          display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 50px 20px;
+background-color: #f8f8f8;
+flex-wrap: wrap; /* Allow wrapping on smaller screens */
+      }
+
+      .timeline .history-content{
+          display: flex;
+justify-content: space-between;
+width: 100%;
+align-items: flex-start;
+gap: 30px; /* Add spacing between the text and the image grid */
+      }
+
+    /* General styling for the timeline section */
+.timeline-content {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+  flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+}
+
+/* Style for the text content */
+.text-content {
+  flex: 1;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Style for the image grids */
+.image-grid-left, .image-grid-right {
+  flex: 1;
+  display: grid;
+  gap: 10px;
+  box-sizing: border-box;
+}
+
+/* Align images for the left side */
+.image-grid-left {
+  justify-items: start;
+}
+
+/* Align images for the right side */
+.image-grid-right {
+  justify-items: end;
+}
+
+/* Ensure images are responsive */
+.image-grid-left img, .image-grid-right img {
+  width: 100%; /* Make sure the images fill the container */
+  height: auto; /* Maintain aspect ratio */
+  max-width: 100%; /* Prevent images from exceeding container width */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Hover effect: Scale the image slightly and add a shadow */
+.image-grid-left img:hover, .image-grid-right img:hover {
+  transform: scale(1.1); /* Slight zoom effect */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+}
+
+/* Commences */
+/* General styling */
+.company-intro {
+  padding: 50px 5%;
+}
+
+/* Layout for images and text */
+.company-intro-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+/* Image gallery with side-by-side alignment */
+.image-gallery {
+  display: flex;
+  align-items: flex-start; /* Align images to the top */
+  gap: 15px;
+  flex: 1;
+  max-width: 50%;
+}
+
+/* Common styles for both images */
+.img-large {
+  width: 55%;
+  max-width: 280px;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* The offset image with margin-top to create space above */
+.offset-img {
+  margin-top: 30px; /* Space above the second image */
+}
+
+/* Hover effect */
+.image-gallery img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+
+.company-description-box {
+  background-color: red; /* Red background */
+  padding: 30px;
+  border-radius: 10px;
+  color: white; /* White text */
+  flex: 1;
+  max-width: 50%;
+}
+
+/* Bullet Points Styling */
+.bullet-points {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  font-size: 18px;
+}
+
+/* Text content on the right */
+.company-description {
+  flex: 1;
+  text-align: left;
+}
+
+/* Bullet point style */
+.bullet-points li {
+  font-size: 16px; /* Base text size */
+  margin: 10px 0;
+  color: white;
+  position: relative;
+  padding-left: 60px; /* Adjusted for the 50px bullet */
+  line-height: 1.5; /* Add space between lines of text */
+}
+
+/* Bullet size and alignment */
+.bullet-points li::before {
+  content: "•";
+  color: white;
+  font-size: 50px; /* Bullet size 50px */
+  position: absolute;
+  left: 0;
+  top: 50%; /* Align bullet vertically with the text */
+  transform: translateY(-50%); /* Center the bullet vertically */
+}
+
+/* vision */
+.video-container {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Full viewport height */
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.video-container video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the video fully covers the screen */
+}
+
+/* Overlay text styling */
+.overlay-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  background: rgba(0, 0, 0, 0.6); /* Dark overlay for readability */
+  padding: 30px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 700px;
+}
+
+/* Text styles */
+.overlay-text h2 {
+  font-size: 3rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.overlay-text p {
+  font-size: 1.2rem;
+  line-height: 1.6;
 }
 
 
@@ -383,6 +659,35 @@ video {
 
 /* timeline */
 
+/* Make the layout stack vertically on smaller screens */
+@media screen and (max-width: 768px) {
+  .timeline-content {
+      flex-direction: column; /* Stack content vertically */
+      text-align: center;
+  }
+
+  .image-grid-left, .image-grid-right {
+      flex: 0 0 100%; /* Take full width */
+      justify-items: center;
+  }
+
+  .text-content {
+      text-align: center;
+      padding: 15px;
+  }
+}
+
+/* Optional: For very small screens, adjust the padding for better fit */
+@media screen and (max-width: 480px) {
+  .text-content {
+      padding: 10px;
+  }
+
+  .image-grid-left img, .image-grid-right img {
+      width: 100%; /* Ensure images take the full width of the container */
+  }
+}
+
 
 /* For very small screens (mobile phones) */
 @media (max-width: 480px) {
@@ -422,6 +727,12 @@ video {
     font-size: 25px;
   }
 
+  .heading {
+    font-size: 25px;
+    flex-direction: column;
+      align-items: center;
+  }
+
   .history .history-content {
       flex-direction: column;
       align-items: center;
@@ -433,20 +744,227 @@ video {
   }
 }
 
+
 /* video */
 /* Media Query for Mobile Devices */
-@media (max-width: 768px) {
+/*@media (max-width: 768px) {
   .video-container {
-      height: 40vh; /* Slightly smaller for mobile screens */
+      height: 40vh;*/ /* Slightly smaller for mobile screens */
+ /* }
+}*/
+
+/* Media Query for Smaller Phones */
+/*@media (max-width: 480px) {
+  .video-container {
+      height: 35vh; /* Further reduce height on very small screens */
+ /* }
+} */
+
+
+/* Commence */
+
+/* === RESPONSIVE DESIGN === */
+
+/* Tablets & Small Screens */
+@media screen and (max-width: 1024px) {
+  .company-intro-content {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+  }
+
+  .image-gallery {
+      max-width: 80%;
+      justify-content: center;
+  }
+
+  .company-description {
+      max-width: 80%;
+      padding-left: 0;
+      text-align: center; /* Center the text on smaller screens */
+  }
+
+  .bullet-points li {
+      font-size: 14px; /* Smaller font size for tablets */
+  }
+
+  .bullet-points li::before {
+      font-size: 40px; /* Smaller bullet size for tablets */
   }
 }
 
-/* Media Query for Smaller Phones */
-@media (max-width: 480px) {
-  .video-container {
-      height: 35vh; /* Further reduce height on very small screens */
+/* Mobile Devices */
+@media screen and (max-width: 768px) {
+  .company-intro-content {
+      flex-direction: column;
+      text-align: center;
+  }
+
+  .image-gallery {
+      max-width: 100%;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+  }
+
+  .img-large {
+      width: 90%;
+      max-width: 100%;
+  }
+
+  .company-description {
+      max-width: 100%;
+      padding-left: 0;
+      text-align: center; /* Ensure text is centered on mobile */
+  }
+
+  .bullet-points li {
+      font-size: 12px; /* Smaller font size for mobile */
+  }
+
+  .bullet-points li::before {
+      font-size: 35px; /* Smaller bullet size for mobile */
   }
 }
+
+/* Very Small Screens */
+@media screen and (max-width: 480px) {
+  .company-intro {
+      padding: 30px 5%;
+  }
+
+  .image-gallery {
+      gap: 5px;
+  }
+
+  .img-large {
+      width: 100%;
+  }
+
+  .company-description {
+      padding-left: 0;
+      text-align: center; /* Ensure text is centered on very small screens */
+  }
+
+  .bullet-points li {
+      font-size: 11px; /* Even smaller font size for small devices */
+  }
+
+  .bullet-points li::before {
+      font-size: 30px; /* Even smaller bullet size for small devices */
+  }
+}
+
+/* Tablets & Small Screens */
+@media screen and (max-width: 1024px) {
+  .company-intro-content {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+  }
+
+  .company-description-box {
+      max-width: 80%;
+      padding: 20px;
+  }
+
+  .image-gallery {
+      max-width: 80%;
+      justify-content: center;
+  }
+
+  .bullet-points li {
+      font-size: 16px;
+  }
+
+  .bullet-points li::before {
+      font-size: 40px;
+  }
+}
+
+/* Mobile Devices */
+@media screen and (max-width: 768px) {
+  .company-intro-content {
+      flex-direction: column;
+      text-align: center;
+  }
+
+  .company-description-box {
+      max-width: 100%;
+      padding: 20px;
+  }
+
+  .image-gallery {
+      max-width: 100%;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+  }
+
+  .img-large {
+      width: 90%;
+      max-width: 100%;
+  }
+
+  .bullet-points li {
+      font-size: 14px;
+      text-align: left;
+
+  }
+
+  .bullet-points li::before {
+      font-size: 35px;
+  }
+}
+
+/* Very Small Screens */
+@media screen and (max-width: 480px) {
+  .company-intro {
+      padding: 30px 5%;
+  }
+
+  .company-intro-content {
+      gap: 30px; /* More space between images and text box */
+  }
+
+  .image-gallery {
+      gap: 15px;
+  }
+
+  .img-large {
+      width: 100%;
+  }
+
+  .company-description-box {
+      padding: 15px;
+  }
+
+  .bullet-points li {
+      font-size: 12px;
+  }
+
+  .bullet-points li::before {
+      font-size: 30px;
+  }
+}
+
+/* vission */
+@media (max-width: 480px) {
+  .video-container {
+      height: 50vh; /* Reduce video size on mobile */
+  }
+  .overlay-text {
+      width: 95%;
+      padding: 10px;
+  }
+  .overlay-text h2 {
+      font-size: 1.8rem;
+  }
+  .overlay-text p {
+      font-size: 0.9rem;
+  }
+}
+
 
 @media (max-width: 475px) {
 }
