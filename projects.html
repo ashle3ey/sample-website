@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>FSDV Sample</title>
+
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+        <link rel="icon" href="pictures/logo.png" type="images/FSDV">
+
+
+        <link rel="stylesheet" href="style.css">
+
+        <!--<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>-->
+
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/scrollreveal"></script>
+
+
+         <style>
+.projects {
+  padding: 5vw 8vw 0 8vw;
+}
+
+.tabs-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  background-color: #FF1313;
+  color: white;
+  padding: 15px 0;
+  width: 100%;
+  border-radius: 10px 10px 0 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.tab {
+  flex: 1;
+  text-align: center;
+  padding: 20px 0;
+  cursor: pointer;
+  font-size: 20px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  margin: 0 8px;
+  border-radius: 8px;
+  position: relative;
+}
+
+.tab:hover {
+  background-color: #e71818;
+  transform: translateY(-3px);
+}
+
+.tab.active {
+  background-color: #f0a500;
+  color: white;
+  font-weight: bold;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.tabs-content {
+  display: none;
+  padding: 30px;
+  width: 100%;
+  box-sizing: border-box;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.tabs-content.active {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.tab-info {
+  color: #333;
+  font-size: 18px;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+.tab-info h2 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.tab-images {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  justify-items: center;
+  width: 100%;
+}
+
+.tab-images img {
+  width: 100%;
+  max-width: 450px;
+  height: auto;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 10px;
+}
+
+.tab-images img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .tabs-header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .tab {
+    flex: none;
+    width: 100%;
+    padding: 15px 0;
+    text-align: center;
+    margin: 10px 0;
+  }
+
+  .tab-images {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .tab-info {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .tabs-header {
+    font-size: 16px;
+  }
+
+  .tab {
+    padding: 12px 0;
+  }
+
+  .tab-images {
+    grid-template-columns: 1fr;
+  }
+
+  .tab-info {
+    font-size: 14px;
+  }
+}
+
+
+.slider {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.product-slider{
+  padding: 40px 20px;
+}
+
+.product-slider h2{
+  text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.5rem; /* Increased font size for header */
+    color: #333;
+}
+
+.product-container {
+    display: flex;
+    animation: slide 40s linear infinite;
+}
+
+.product {
+    flex-shrink: 0;
+    text-align: center;
+    padding: 10px;
+}
+
+.product img {
+    max-width: 80%; /* Make images smaller (80% of their container's width) */
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.product h3 {
+    margin-top: 10px;
+    font-size: 1.2rem;
+}
+
+.product p {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+/* Infinite scroll animation */
+@keyframes slide {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/* Pause on hover */
+.slider:hover .product-container {
+    animation-play-state: paused;
+}
+
+/* Mobile Devices: One product per row */
+@media (max-width: 768px) {
+    .product {
+        width: 100%; /* Full width per product */
+        margin: 0;
+    }
+
+    .product-container {
+        gap: 10px;
+    }
+
+    .product img {
+        max-width: 60%; /* Smaller images on mobile */
+    }
+}
+
+/* Tablet Devices: Two products per row */
+@media (max-width: 1024px) and (min-width: 769px) {
+    .product {
+        width: 48%; /* Two products per row */
+        margin: 0 10px;
+    }
+
+    .product-container {
+        gap: 20px;
+    }
+
+    .product img {
+        max-width: 70%; /* Smaller images on tablet */
+    }
+}
+
+/* Desktop Devices: Three products per row */
+@media (min-width: 1025px) {
+    .product {
+        width: 30%; /* Three products per row */
+        margin: 0 15px;
+    }
+
+    .product-container {
+        gap: 20px;
+    }
+
+    .product img {
+        max-width: 60%; /* Smaller images on desktop */
+    }
+}
+
+.client-logos-section {
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+}
+
+.client-logos-section h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.5rem; /* Increased font size for header */
+    color: #333;
+}
+
+.client-logos-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px; /* Increased gap between rows */
+}
+
+.logo-row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px; /* Increased gap between logos */
+    justify-content: center;
+}
+
+.logo {
+    max-width: 200px; /* Increased max width */
+    max-height: 120px; /* Increased max height */
+    object-fit: contain;
+    margin: 20px; /* Added margin for spacing */
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.1); /* Slight scale effect on hover */
+}
+
+@media (max-width: 1200px) {
+    .logo {
+        max-width: 180px; /* Slightly smaller logo for medium screens */
+        max-height: 100px;
+    }
+}
+
+@media (max-width: 992px) {
+    .logo-row {
+        justify-content: space-around;
+    }
+    .logo {
+        max-width: 160px; /* Smaller size for smaller screens */
+        max-height: 90px;
+    }
+}
+
+@media (max-width: 768px) {
+    .logo-row {
+        justify-content: center;
+    }
+    .logo {
+        max-width: 140px; /* Smaller size for tablets */
+        max-height: 80px;
+    }
+}
+
+@media (max-width: 576px) {
+    .logo-row {
+        flex-direction: column;
+        align-items: center;
+    }
+    .logo {
+        max-width: 120px; /* Smaller size for mobile screens */
+        max-height: 70px;
+    }
+}
+
+</style>   
+
+    </head>
+
+    <body>
+
+        <nav>
+            <img src="pictures/logo.png" alt="">
+            <div class="navigation">
+                <ul>
+                    <i id="menu-close" class="fa-solid fa-x"></i>
+                    <li><a href="index.html">Who We Are</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="credential.html">Credential</a></li>
+                </ul>
+                <img id="menu-btn" src="pictures/menu.png" alt="">
+            </div>
+        </nav>
+
+        <div class="image-container-projects">
+            <!--<img src="pictures/bg5.jpg" alt="Construction Company Vision" class="banner-image"/>-->
+            <div class="overlay-text-img">
+                <h2>PROJECTS</h2>
+            </div>
+        </div>
+        
+
+        <!-- Tabs Header -->
+    <section id="projects" class="projects">
+  <div class="tabs-header">
+    <div class="tab active" data-tab="tab-1">Swimming Pool</div>
+    <div class="tab" data-tab="tab-2">Structural & Architectural</div>
+    <div class="tab" data-tab="tab-3">HVAC</div>
+    <div class="tab" data-tab="tab-4">Waterproofing</div>
+    <!--<div class="tab" data-tab="tab-5">Architecturl</div>-->
+    <div class="tab" data-tab="tab-5">Renovation</div>
+    <div class="tab" data-tab="tab-6">Grneral Construction</div>
+    <div class="tab" data-tab="tab-7">Cell Site</div>
+    <div class="tab" data-tab="tab-8">Others</div>
+  </div>
+
+<!-- Project 1 Content -->
+<div class="tabs-content tab-1 active">
+    <div class="tab-info">
+      <h2>Callisto Tower</h2>
+      <p>This is a description of Project 1. It is a web development project focused on creating interactive user interfaces.</p>
+    </div>
+    <div class="tab-images">
+      <img src="pictures/project - s1.jpg" alt="Project 1 Image 1">
+      <img src="pictures/project - s2.jpg" alt="Project 1 Image 2">
+      <img src="pictures/project - s3.jpg" alt="Project 1 Image 3">
+      <img src="pictures/project - s4.jpg" alt="Project 1 Image 4">
+      <img src="pictures/project - s5.jpg" alt="Project 1 Image 5">
+      <img src="pictures/project - s6.jpg" alt="Project 1 Image 6">
+      <img src="pictures/project - s7.jpg" alt="Project 1 Image 7">
+    </div>
+  </div>
+  
+  <!-- Project 2 Content -->
+  <div class="tabs-content tab-2">
+    <div class="tab-info">
+      <h2>Fire Exit & Maintenance Room</h2>
+      <p>This is a description of Project 2. It is a mobile application designed for better task management.</p>
+    </div>
+    <div class="tab-images">
+      <img src="pictures/structural and architectural - 1.jpg" alt="Project 2 Image 1">
+      <img src="pictures/structural and architectural - 2.jpg" alt="Project 2 Image 2">
+      <img src="pictures/structural and architectural - 3.jpg" alt="Project 2 Image 3">
+      <img src="pictures/structural and architectural - 4.jpg" alt="Project 2 Image 4">
+      <img src="pictures/structural and architectural - 5.jpg" alt="Project 2 Image 5">
+      <img src="pictures/structural and architectural - 6.jpg" alt="Project 2 Image 6">
+      <img src="pictures/structural and architectural - 7.jpg" alt="Project 2 Image 7">
+      <img src="pictures/structural and architectural - 8.jpg" alt="Project 2 Image 8">
+    </div>
+  </div>
+  
+  <!-- Project 3 Content -->
+  <div class="tabs-content tab-3">
+    <div class="tab-info">
+      <h2>Project 3</h2>
+      <p>This is a description of Project 3. It is an AI-driven project that helps with data analysis and predictions.</p>
+    </div>
+    <div class="tab-images">
+      <img src="pictures/bg1.jpg" alt="Project 3 Image 1">
+      <img src="pictures/bg2.jpg" alt="Project 3 Image 2">
+      <img src="pictures/bg3.jpg.crdownload.jpg" alt="Project 3 Image 3">
+    </div>
+  </div>
+  
+  <!-- Project 4 Content -->
+  <div class="tabs-content tab-4">
+    <div class="tab-info">
+      <h2>Sail Residence, Manila</h2>
+      <p>This is a description of Project 4. It is a cloud-based service designed for large-scale data storage and management.</p>
+    </div>
+    <div class="tab-images">
+        <img src="pictures/waterproofing - 1.jpg" alt="Project 4 Image 1">
+        <img src="pictures/waterproofing - 2.jpg" alt="Project 4 Image 2">
+        <img src="pictures/waterproofing - 3.jpg" alt="Project 4 Image 3">
+        <img src="pictures/waterproofing - 4.jpg" alt="Project 4 Image 4">
+        <img src="pictures/waterproofing - 5.jpg" alt="Project 4 Image 5">
+        <img src="pictures/waterproofing - 6.jpg" alt="Project 4 Image 6">
+    </div>
+  </div>
+  
+  <!-- Project 5 Content -->
+  <div class="tabs-content tab-5">
+    <div class="tab-info">
+      <h2>Jade Garden Manila</h2>
+      <p>This is a description of Project 5. It is a video editing tool built to help creators produce high-quality content quickly.</p>
+    </div>
+    <div class="tab-images">
+      <img src="pictures/renovation - 1.jpg" alt="Project 5 Image 1">
+      <img src="pictures/renovation - 2.jpg" alt="Project 5 Image 2">
+      <img src="pictures/renovation - 3.jpg" alt="Project 5 Image 3">
+      <img src="pictures/renovation - 4.jpg" alt="Project 5 Image 4">
+      <img src="pictures/renovation - 5.jpg" alt="Project 5 Image 5">
+      <img src="pictures/renovation - 6.jpg" alt="Project 5 Image 6">
+      <img src="pictures/renovation - 7.jpg" alt="Project 5 Image 7">
+      <img src="pictures/renovation - 8.jpg" alt="Project 5 Image 8">
+    </div>
+  </div>
+  
+  <!-- Project 6 Content -->
+  <div class="tabs-content tab-6">
+    <div class="tab-info">
+      <h2>3 storey bldg</h2>
+      <p>This is a description of Project 6. It is a social media app focused on connecting people with similar interests.</p>
+    </div>
+    <div class="tab-images">
+        <img src="pictures/general - 1.jpg" alt="Project 6 Image 1">
+        <img src="pictures/general - 2.jpg" alt="Project 6 Image 2">
+        <img src="pictures/general - 3.jpg" alt="Project 6 Image 3">
+    </div>
+  </div>
+  
+  <!-- Project 7 Content -->
+  <div class="tabs-content tab-7">
+    <div class="tab-info">
+      <h2>DITO cell site Tower</h2>
+      <p>This is a description of Project 7. It is a web scraping tool that gathers data from websites for analysis and reporting.</p>
+    </div>
+    <div class="tab-images">
+      <img src="pictures/cell -1.jpg" alt="Project 7 Image 1">
+      <img src="pictures/cell - 2.jpg" alt="Project 7 Image 2">
+      <img src="pictures/cell - 3.jpg" alt="Project 7 Image 3">
+      <img src="pictures/cell - 4.jpg" alt="Project 7 Image 4">
+    </div>
+  </div>
+  
+  <!-- Project 8 Content -->
+  <div class="tabs-content tab-8">
+    <div class="tab-info">
+      <h2>Rebisco, Magalang Pampanga</h2>
+      <p>This is a description of Project 8. It is a mobile game that combines strategy and adventure, providing a unique gaming experience.</p>
+    </div>
+    <div class="tab-images">
+        <img src="pictures/others - 1.jpg" alt="Project 8 Image 1">
+        <img src="pictures/others - 2.jpg" alt="Project 8 Image 2">
+        <img src="pictures/others - 3.jpg" alt="Project 8 Image 3">
+        <img src="pictures/others - 4.jpg" alt="Project 8 Image 4">
+    </div>
+    <div class="tab-info">
+      <h2>Cistern tank using capillary and epoxy tank lining</h2>
+      <p>This is a description of Project 8. It is a mobile game that combines strategy and adventure, providing a unique gaming experience.</p>
+    </div>
+    <div class="tab-images">
+        <img src="pictures/others - 5.jpg" alt="Project 8 Image 1">
+        <img src="pictures/others - 6.jpg" alt="Project 8 Image 2">
+        <img src="pictures/others - 7.jpg" alt="Project 8 Image 3">
+        <img src="pictures/others - 8.jpg" alt="Project 8 Image 4">
+    </div>
+    <div class="tab-info">
+      <h2>PSG Parking Malacanang</h2>
+      <p>This is a description of Project 8. It is a mobile game that combines strategy and adventure, providing a unique gaming experience.</p>
+    </div>
+    <div class="tab-images">
+        <img src="pictures/others - 9.jpg" alt="Project 8 Image 1">
+        <img src="pictures/others - 10.jpg" alt="Project 8 Image 2">
+        <img src="pictures/others - 11.jpg" alt="Project 8 Image 3">
+    </div>
+    <div class="tab-info">
+      <h2>Tivoli Royale</h2>
+      <p>This is a description of Project 8. It is a mobile game that combines strategy and adventure, providing a unique gaming experience.</p>
+    </div>
+    <div class="tab-images">
+        <img src="pictures/others - 12.jpg" alt="Project 8 Image 1">
+        <img src="pictures/others - 13.jpg" alt="Project 8 Image 2">
+        <img src="pictures/others - 14.jpg" alt="Project 8 Image 3">
+    </div>
+    <div class="tab-info">
+      <h2>intallation Rebars</h2>
+      <p>This is a description of Project 8. It is a mobile game that combines strategy and adventure, providing a unique gaming experience.</p>
+    </div>
+    <div class="tab-images">
+        <img src="pictures/others - 15.jpg" alt="Project 8 Image 1">
+        <img src="pictures/others - 17.jpg" alt="Project 8 Image 3">
+        <img src="pictures/others - 16.jpg" alt="Project 8 Image 2">
+        <img src="pictures/others - 18.jpg" alt="Project 8 Image 4">
+        <img src="pictures/others - 19.jpg" alt="Project 8 Image 5">
+    </div>
+  </div>
+</section>     
+
+<section class="client-logos-section">
+  <h2>Clients</h2>
+  <div class="client-logos-container">
+      <div class="logo-row">
+          <img src="pictures/client amaia steps.png" alt="Client 1" class="logo">
+          <img src="pictures/client amaia.jpg" alt="Client 2" class="logo">
+          <img src="pictures/cleint arbolanes.jpg" alt="Client 3" class="logo">
+          <img src="pictures/client anytime.png" alt="Client 4" class="logo">
+          <img src="pictures/client bgc.jpg" alt="Client 5" class="logo">
+          <img src="pictures/client dito.jpg" alt="Client 6" class="logo">
+      </div>
+      <div class="logo-row">
+          <img src="pictures/client macao.jpg" alt="Client 7" class="logo">
+          <img src="pictures/client mapua.png" alt="Client 8" class="logo">
+          <img src="pictures/client maybank.png" alt="Client 9" class="logo">
+          <img src="pictures/client mcdo.png" alt="Client 10" class="logo">
+          <img src="pictures/client newport.jpg" alt="Client 11" class="logo">
+          <img src="pictures/client spi.jpg" alt="Client 12" class="logo">
+      </div>
+      <div class="logo-row">
+          <img src="pictures/client Torre Central Manila.png" alt="Client 13" class="logo">
+          <img src="pictures/client UST.jpg" alt="Client 14" class="logo">
+      </div>
+  </div>
+</section>
+
+<section class="product-slider" id="product-slider">
+  <h2>Products</h2>
+<div class="slider">
+  <div class="product-container">
+      <!-- Repeat the products for seamless looping -->
+      <div class="product">
+          <img src="pictures/cretpaver.jpg" alt="CretePaver">
+          <h3>CretePaver</h3>
+          <p>A high-performance product for creating durable paving solutions.</p>
+      </div>
+      <div class="product">
+          <img src="pictures/aqua patch.png" alt="Aqua Patch">
+          <h3>Aqua Patch</h3>
+          <p>Advanced repair solutions for water-related damages in concrete.</p>
+      </div>
+      <div class="product">
+          <img src="pictures/Trulink Energy Corp..png" alt="Trulink Energy Corp.">
+          <h3>Trulink Energy Corp.</h3>
+          <p>Leading provider of energy-efficient solutions for industries.</p>
+      </div>
+      <div class="product">
+          <img src="pictures/lightstrong.jpg" alt="Light Strong">
+          <h3>Light Strong</h3>
+          <p>Durable and lightweight materials for construction projects.</p>
+      </div>
+      <div class="product">
+          <img src="pictures/cetco.jpg" alt="Cetco">
+          <h3>Cetco</h3>
+          <p>Innovative solutions for water management and environmental protection.</p>
+      </div>
+      <div class="product">
+          <!--<img src="https://via.placeholder.com/300x200" alt="Shosesik Ako">-->
+          <h3>Shosesik Ako</h3>
+          <p>A brand known for high-quality industrial tools and accessories.</p>
+      </div>
+      <div class="product">
+          <!--<img src="https://via.placeholder.com/300x200" alt="NKS">-->
+          <h3>NKS</h3>
+          <p>Providing advanced equipment and machinery for various sectors.</p>
+      </div>
+      <div class="product">
+          <img src="pictures/greenseal.jpg" alt="Greenseal">
+          <h3>Greenseal</h3>
+          <p>Environmental solutions focused on sustainability and eco-friendly practices.</p>
+      </div>
+      <div class="product">
+          <img src="pictures/kansai.jpg" alt="Kansai Paints">
+          <h3>Kansai Paints</h3>
+          <p>A leading manufacturer of high-quality paints for residential and commercial use.</p>
+      </div>
+      <div class="product">
+          <img src="pictures/mizutani1.jpg" alt="Mizutani">
+          <h3>Mizutani</h3>
+          <p>Renowned for precision tools and equipment in various industries.</p>
+      </div>
+      <!-- Repeat products again for seamless loop -->
+      <div class="product">
+          <img src="pictures/cretpaver.jpg" alt="CretePaver">
+          <h3>CretePaver</h3>
+          <p>A high-performance product for creating durable paving solutions.</p>
+      </div>
+      <div class="product">
+          <img src="pictures/aqua patch.png" alt="Aqua Patch">
+          <h3>Aqua Patch</h3>
+          <p>Advanced repair solutions for water-related damages in concrete.</p>
+      </div>
+      <!-- Continue with other repeated products -->
+  </div>
+</div>
+</section>
+
+        <footer>
+            <div class="footer-container">
+                <div class="footer-logo">
+                    <img src="pictures/logobgd.jpg" alt="Company Logo">
+                    <div class="social-icons">
+                      <a href="https://www.facebook.com/people/FSDV-Construction-Services/100066406575267/" target="_blank">
+                          <i class="fa-brands fa-facebook"></i>
+                      </a>
+                      <a href="mailto:fsdychauco@gmail.com">
+                          <i class="fa-solid fa-envelope"></i>
+                      </a>
+                  </div>
+                </div>
+        
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                      <li><a href="index.html">Who We Are</a></li>
+                      <li><a href="services.html">Services</a></li>
+                      <li><a href="projects.html">Projects</a></li>
+                      <li><a href="credential.html">Creential</a></li>
+                    </ul>
+                </div>
+        
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <p>Email: <a href="mailto:info@company.com">fsdychauco@gmail.com</a></p>
+                    <p>Phone: 0995-826-2117</p>
+                    <p>Address: Taguig, Philippines</p>
+                </div>
+            </div>
+        
+            <div class="footer-bottom">
+                <p>&copy; 2025 FSDV | All Rights Reserved</p>
+            </div>
+        </footer>
+
+        <!-- Navigation -->
+
+        <!-- Home -->
+
+        <!-- Courses -->
+
+        <!-- footer -->
+
+        <script>
+            window.addEventListener("scroll", function(){
+                       var header = document.querySelector("nav");
+                       header.classList.toggle('sticky', window.scrollY > 0);
+                   });
+           
+           
+           
+                       // Navaigation Bar
+                       $('#menu-btn').click(function(){
+                           $('nav .navigation ul').addClass('active')
+                       });
+                       $('#menu-close').click(function(){
+                           $('nav .navigation ul').removeClass('active')
+                       });
+           
+                       document.addEventListener("DOMContentLoaded", function () {
+               // Create an IntersectionObserver to detect when the images are in the viewport
+               const images = document.querySelectorAll(".image-grid img");
+           
+               // Create the intersection observer
+               const observer = new IntersectionObserver(
+                   (entries, observer) => {
+                       entries.forEach((entry) => {
+                           if (entry.isIntersecting) {
+                               // Add 'visible' class to images when they come into view
+                               entry.target.classList.add("visible");
+                               observer.unobserve(entry.target); // Stop observing the image after it's in view
+                           }
+                       });
+                   },
+                   {
+                       threshold: 0.5, // Trigger when 50% of the image is in the viewport
+                   }
+               );
+           
+               // Observe each image in the image grid
+               images.forEach((image) => {
+                   observer.observe(image);
+               });
+           });
+           
+                       ScrollReveal({ 
+                           reset: true,
+                           distance: '60px',
+                           duration: 2000,
+                           delay: 400
+                       });
+           
+                       ScrollReveal().reveal('.heading', { delay: 200, origin: 'left' });
+                       ScrollReveal().reveal('.text-content', { delay: 400, origin: 'bottom' });
+           
+
+
+                   // Get all tab elements
+    const tabs = document.querySelectorAll('.tab');
+    const contents = document.querySelectorAll('.tabs-content');
+
+    // Add event listeners to tabs
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        // Remove active class from all tabs and contents
+        tabs.forEach(t => t.classList.remove('active'));
+        contents.forEach(c => c.classList.remove('active'));
+
+        // Add active class to the clicked tab and corresponding content
+        tab.classList.add('active');
+        document.querySelector(`.${tab.dataset.tab}`).classList.add('active');
+      });
+    });
+
+
+// JavaScript to handle the automatic scrolling of the slider
+const productContainer = document.querySelector('.product-container');
+const products = document.querySelectorAll('.product');
+const totalProducts = products.length;
+let scrollInterval;
+
+function startAutoScroll() {
+    scrollInterval = setInterval(() => {
+        // Move the container to the left by the width of one product (width + margin)
+        const productWidth = products[0].offsetWidth + 30; // 15px margin on each side
+        const currentPosition = productContainer.scrollLeft;
+
+        // If the end is reached, reset to the beginning
+        if (currentPosition >= productWidth * (totalProducts - 1)) {
+            productContainer.scrollLeft = 0;
+        } else {
+            productContainer.scrollLeft += productWidth; // Scroll by one product width
+        }
+    }, 2000); // Change the interval time for speed (2000ms = 2 seconds)
+}
+
+// Start the auto scroll when the page loads
+startAutoScroll();
+
+// Pause the slider when hovering over it
+productContainer.addEventListener('mouseenter', () => {
+    clearInterval(scrollInterval); // Stop the scroll
+});
+
+// Resume the slider when the mouse leaves
+productContainer.addEventListener('mouseleave', () => {
+    startAutoScroll(); // Restart the scroll
+});
+
+                   </script>
+
+    </body>
+
+</html>

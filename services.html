@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>FSDV Sample</title>
+
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+        <link rel="icon" href="pictures/logo.png" type="images/FSDV">
+
+
+        <link rel="stylesheet" href="style.css">
+
+        <!--<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>-->
+
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/scrollreveal"></script>
+
+
+         <style>
+
+
+.services-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.services-section h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 40px;
+  color: #333;
+}
+
+.services-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);  /* Fixed 3 columns */
+  grid-template-rows: repeat(2, auto);    /* Two rows */
+  gap: 20px;
+  justify-items: center;
+}
+
+.service-card {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 100%;
+  max-width: 300px;
+}
+
+.service-card .icon {
+  font-size: 50px;
+  margin-bottom: 15px;
+}
+
+.service-card h3 {
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+}
+
+.service-card p {
+  font-size: 1rem;
+  color: #555;
+}
+
+.service-card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+  transition: all 0.3s ease;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1200px) {
+  .services-container {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .service-card .icon {
+    font-size: 40px;
+  }
+  .service-card h3 {
+    font-size: 1.4rem;
+  }
+  .service-card p {
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .service-card .icon {
+    font-size: 35px;
+  }
+  .service-card h3 {
+    font-size: 1.2rem;
+  }
+  .service-card p {
+    font-size: 0.85rem;
+  }
+}
+         </style>   
+
+    </head>
+
+    <body>
+
+        <nav>
+            <img src="pictures/logo.png" alt="">
+            <div class="navigation">
+                <ul>
+                    <i id="menu-close" class="fa-solid fa-x"></i>
+                    <li><a href="index.html">Who We Are</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="credential.html">Credential</a></li>
+                </ul>
+                <img id="menu-btn" src="pictures/menu.png" alt="">
+            </div>
+        </nav>
+
+        <div class="image-container">
+            <!--<img src="pictures/bg4.jpg" alt="Construction Company Vision" class="banner-image"/>-->
+            <div class="overlay-text-img">
+                <h2>SERVICES</h2>
+            </div>
+        </div>
+        
+        <section class="intro">
+            <div class="container">
+              <h2>Innovative Solutions for Construction and Engineering</h2>
+              <p>FSDV employs a competent workforce who offers an extensive range of equipment, offers long term warranty, full-service firm solutions, and maintains strict safety standards. Choosing us ensures a trustworthy & knowledgeable building partner in the Philippines</p>
+            </div>
+          </section>
+
+          <section class="services-section">
+            <h2>We cater to the following industries:</h2>
+            <div class="services-container">
+              <div class="service-card">
+                <div class="icon">&#x1F3E0;</div>
+                <h3>Residential</h3>
+                <p>High-quality residential construction with attention to detail and comfort.</p>
+              </div>
+              <div class="service-card">
+                <div class="icon">&#x1F3ED;</div>
+                <h3>Manufacturing</h3>
+                <p>Efficient and scalable solutions for the manufacturing industry.</p>
+              </div>
+              <div class="service-card">
+                <div class="icon">&#x1F6A7;</div>
+                <h3>Engineering Contractor</h3>
+                <p>Expert contractors specializing in engineering and construction projects.</p>
+              </div>
+              <div class="service-card">
+                <div class="icon">&#x1F4BC;</div>
+                <h3>Government Projects</h3>
+                <p>Trusted solutions for various government projects and infrastructures.</p>
+              </div>
+              <div class="service-card">
+                <div class="icon">&#x1F3D8;</div>
+                <h3>Buildings</h3>
+                <p>Designing and constructing buildings with a focus on sustainability.</p>
+              </div>
+              <div class="service-card">
+                <div class="icon">&#x1F3E5;&#xFE0F;</div> <!-- Hospital Building Icon -->
+                <h3>Hospitals</h3>
+                <p>Constructing healthcare facilities with safety and modern technologies.</p>
+              </div>
+            </div>
+          </section>
+
+          <section id="services" class="services">
+            <div class="service">
+              <div class="image-container-services">
+                <img src="pictures/services streghtening.jpg" alt="Structural Strengthening" class="clickable-image" data-large="pictures/bg1.jpg">
+                <div class="overlay-services">
+                  <h3>Structural Strengthening</h3>
+                  <p>We reinforce buildings and infrastructures for long-term durability and safety.</p>
+                </div>
+              </div>
+            </div>
+          
+            <div class="service">
+              <div class="image-container-services">
+                <img src="pictures/swimming pool.jpg" alt="Swimming Pool Construction" class="clickable-image" data-large="pictures/bg2.jpg">
+                <div class="overlay-services">
+                  <h3>Swimming Pool Construction</h3>
+                  <p>Custom-designed pools built for beauty and functionality, tailored to your needs.</p>
+                </div>
+              </div>
+            </div>
+          
+            <div class="service">
+              <div class="image-container-services">
+                <img src="pictures/water.jpg" alt="Water Features" class="clickable-image" data-large="pictures/bg4.jpg">
+                <div class="overlay-services">
+                  <h3>Water Features</h3>
+                  <p>Bring tranquility and elegance to your space with custom fountains and waterfalls.</p>
+                </div>
+              </div>
+            </div>
+          
+            <div class="service">
+              <div class="image-container-services">
+                <img src="pictures/waterproofing.jpg" alt="Waterproofing" class="clickable-image" data-large="pictures/bg5.jpg">
+                <div class="overlay-services">
+                  <h3>Waterproofing</h3>
+                  <p>Protect your property from water damage with our premium waterproofing solutions.</p>
+                </div>
+              </div>
+            </div>
+          
+            <div class="service">
+              <div class="image-container-services">
+                <img src="pictures/painting.jpg" alt="Painting and Maintenance" class="clickable-image" data-large="pictures/bg4.jpg">
+                <div class="overlay-services">
+                  <h3>Painting and Maintenance</h3>
+                  <p>High-quality painting and regular maintenance to preserve the look and value of your property.</p>
+                </div>
+              </div>
+            </div>
+          
+            <div class="service">
+              <div class="image-container-services">
+                <img src="pictures/residential.jpg" alt="Residential Construction" class="clickable-image" data-large="pictures/bg5.jpg">
+                <div class="overlay-services">
+                  <h3>Residential Construction</h3>
+                  <p>Homes built with care and attention to detail, from design to final touches.</p>
+                </div>
+              </div>
+            </div>
+          
+            <div class="service">
+              <div class="image-container-services">
+                <img src="pictures/electrical.jpg" alt="Mechanical and Electrical Systems" class="clickable-image" data-large="pictures/bg1.jpg">
+                <div class="overlay-services">
+                  <h3>Mechanical & Electrical Systems</h3>
+                  <p>Energy-efficient and reliable HVAC and electrical systems for every property.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+
+          <section class="why-choose">
+            <div class="container">
+              <h2 class="section-title">Why Choose FSDV?</h2>
+              <div class="benefits">
+                <div class="benefit">
+                  <h3>Expertise</h3>
+                  <p>We bring years of experience in various sectors, ensuring the highest quality service.</p>
+                </div>
+                <div class="benefit">
+                  <h3>Innovation</h3>
+                  <p>We are committed to using the latest technology and techniques to solve challenges creatively and effectively.</p>
+                </div>
+                <div class="benefit">
+                  <h3>Reliability</h3>
+                  <p>Our professionals deliver on time and on budget, providing results that exceed expectations.</p>
+                </div>
+                <div class="benefit">
+                  <h3>Comprehensive Services</h3>
+                  <p>From initial consultation to final execution, we manage every aspect of your project, ensuring consistency and quality.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+        <footer>
+            <div class="footer-container">
+                <div class="footer-logo">
+                    <img src="pictures/logobgd.jpg" alt="Company Logo">
+                    <div class="social-icons">
+                      <a href="https://www.facebook.com/people/FSDV-Construction-Services/100066406575267/" target="_blank">
+                          <i class="fa-brands fa-facebook"></i>
+                      </a>
+                      <a href="mailto:fsdychauco@gmail.com">
+                          <i class="fa-solid fa-envelope"></i>
+                      </a>
+                  </div>
+                </div>
+
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                      <li><a href="index.html">Who We Are</a></li>
+                      <li><a href="services.html">Services</a></li>
+                      <li><a href="projects.html">Projects</a></li>
+                      <li><a href="credential.html">Creential</a></li>
+                    </ul>
+                </div>
+        
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <p>Email: <a href="mailto:info@company.com">fsdychauco@gmail.com</a></p>
+                    <p>Phone: 0995-826-2117</p>
+                    <p>Address: Taguig, Philippines</p>
+                </div>
+            </div>
+        
+            <div class="footer-bottom">
+                <p>&copy; 2025 FSDV | All Rights Reserved</p>
+            </div>
+        </footer>
+
+        <!-- Navigation -->
+
+        <!-- Home -->
+
+        <!-- Courses -->
+
+        <!-- footer -->
+
+        <script>
+            window.addEventListener("scroll", function(){
+                       var header = document.querySelector("nav");
+                       header.classList.toggle('sticky', window.scrollY > 0);
+                   });
+           
+           
+           
+                       // Navaigation Bar
+                       $('#menu-btn').click(function(){
+                           $('nav .navigation ul').addClass('active')
+                       });
+                       $('#menu-close').click(function(){
+                           $('nav .navigation ul').removeClass('active')
+                       });
+           
+                       document.addEventListener("DOMContentLoaded", function () {
+               // Create an IntersectionObserver to detect when the images are in the viewport
+               const images = document.querySelectorAll(".image-grid img");
+           
+               // Create the intersection observer
+               const observer = new IntersectionObserver(
+                   (entries, observer) => {
+                       entries.forEach((entry) => {
+                           if (entry.isIntersecting) {
+                               // Add 'visible' class to images when they come into view
+                               entry.target.classList.add("visible");
+                               observer.unobserve(entry.target); // Stop observing the image after it's in view
+                           }
+                       });
+                   },
+                   {
+                       threshold: 0.5, // Trigger when 50% of the image is in the viewport
+                   }
+               );
+           
+               // Observe each image in the image grid
+               images.forEach((image) => {
+                   observer.observe(image);
+               });
+           });
+           
+                       ScrollReveal({ 
+                           reset: true,
+                           distance: '60px',
+                           duration: 2000,
+                           delay: 400
+                       });
+           
+                       ScrollReveal().reveal('.heading', { delay: 200, origin: 'left' });
+                       ScrollReveal().reveal('.text-content', { delay: 400, origin: 'bottom' });
+           
+           
+                   </script>
+
+    </body>
+
+</html>

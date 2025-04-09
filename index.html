@@ -9,6 +9,7 @@
 
         <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+        <link rel="icon" href="pictures/logo.png" type="images/FSDV">
 
 
         <link rel="stylesheet" href="style.css">
@@ -22,107 +23,262 @@
 
 
         <style>
-footer {
-    background: rgb(21, 21, 100); /* Transparent red overlay */
-    background-image: url('pictures/construction-bg.jpg'); /* Construction background */
-    background-size: cover;
-    background-position: center;
-    background-blend-mode: multiply; /* Blends the red overlay with the image */
-    color: #fff;
-    padding: 40px 20px;
-    text-align: center;
+
+/*.team-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; 
+  width: 100%;
+  padding: 50px;
+  background-color: #fff;
 }
 
-.footer-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
-    max-width: 1200px;
-    margin: auto;
+.team-slider {
+  text-align: center;
+  max-width: 1200px; 
+  width: 100%; 
+  position: relative;
 }
 
-.footer-logo {
-    text-align: center;
+.slider-wrapper {
+  overflow: hidden;
 }
 
-.footer-logo img {
-    width: 150px;
-    margin-bottom: 10px;
+.slider-container {
+  display: flex;
+  transition: transform 0.5s ease;
+  width: 100%; 
 }
 
-.social-icons {
-    margin-top: 10px;
+.slide {
+  flex: 0 0 100%; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.social-icons a {
-    color: #fff;
-    font-size: 24px;
-    margin: 0 10px;
-    transition: 0.3s;
-    text-decoration: none; /* Remove underline */
+.card {
+  background-color: #f52626;
+  border-radius: 15px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); 
+  text-align: center;
+  width: 380px; 
+  transition: transform 0.3s ease;
+  margin: 10px;
 }
 
-.social-icons a:hover {
-    color: #f0a500;
+.card img {
+  width: 200px; 
+  height: 200px; 
+  border-radius: 50%;
+  margin-bottom: 20px;
+  object-fit: cover;
+  outline: 3px solid #fff;
 }
 
-.footer-links ul {
-    list-style: none;
-    padding: 0;
+.card h3 {
+  font-size: 2.2em; 
+  margin-bottom: 10px;
+  color: #fff;
 }
 
-.footer-links ul li {
-    margin: 5px 0;
+.card p {
+  font-size: 1.2rem;
+  line-height: 25px;
+  color: #fff;
 }
 
-.footer-links ul li a {
-    color: #fff;
-    text-decoration: none;
-    transition: 0.3s;
+.card:hover {
+  transform: scale(1.1); 
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3); 
 }
 
-.footer-links ul li a:hover {
-    color: #f0a500;
+button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  font-size: 2.5em;
+  border: none;
+  padding: 15px;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
 }
 
-.footer-contact p {
-    margin: 5px 0;
+button:hover {
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
-.footer-contact a {
-    color: #fff;
-    text-decoration: none;
+.prev {
+  left: 20px;
 }
 
-.footer-contact a:hover {
-    text-decoration: underline;
+.next {
+  right: 20px;
 }
 
-.footer-bottom {
-    margin-top: 20px;
-    border-top: 1px solid rgba(255, 255, 255, 0.3);
-    padding-top: 10px;
-    font-size: 14px;
-}
 
-/* 🔹 Responsive Adjustments */
 @media (max-width: 768px) {
-    .footer-container {
-        flex-direction: column;
-        text-align: center;
-    }
+  .team-slider h1 {
+    font-size: 2.5em; 
+  }
 
-    .footer-logo img {
-        width: 120px;
-    }
+  .card {
+    width: 280px; 
+  }
 
-    .social-icons a {
-        font-size: 20px;
-        margin: 0 8px;
+  .card img {
+    width: 160px; 
+    height: 160px; 
+  }
+
+  .card h3 {
+    font-size: 1.8em; 
+  }
+
+  .card p {
+    font-size: 1.2rem; 
+  }
+
+  button {
+    font-size: 2em; 
+    padding: 12px; 
+  }
+}*/
+
+/* Button Styling */
+.see-services-btn {
+    display: inline-block; /* Allow it to behave like a block-level element */
+    border: 2px solid #FF1313; /* Border color */
+    background-color: transparent; /* No background */
+    color: #FF1313; /* Text color */
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Smooth transition on hover */
+    margin-top: 20px; /* Adds space between the text and the button */
+    text-decoration: none; /* Remove underline */
+    text-align: center; /* Center the text inside the button */
+}
+
+/* Button Hover Effect */
+.see-services-btn:hover {
+    background-color: #FF1313; /* Dark background on hover */
+    color: #fff; /* White text on hover */
+    border-color: #FF1313; /* Ensures border remains the same color */
+}
+
+/* Responsive Design (optional) */
+@media (max-width: 768px) {
+    .see-services-btn {
+        font-size: 0.9rem; /* Smaller font size on medium screens */
+        padding: 8px 16px; /* Adjust padding for better fit */
+        margin-top: 15px; /* Adjust space between text and button on medium screens */
     }
 }
 
+@media (max-width: 480px) {
+    .see-services-btn {
+        font-size: 0.8rem; /* Even smaller font size for mobile screens */
+        padding: 6px 14px; /* Adjust padding further for mobile */
+        margin-top: 10px; /* Adjust space between text and button on mobile screens */
+    }
+}
+
+/* Section Styling */
+.team-section1 {
+  width: 100%;
+  max-width: 1200px; /* Set a max-width to prevent the section from being too wide */
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto; /* Center the section */
+}
+
+.team h1 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+  font-weight: bold;
+  width: 100%;
+  text-transform: capitalize; /* Capitalizes the title */
+}
+
+/* Team container and grid layout */
+.team-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Default to 4 columns */
+  gap: 20px;
+  width: 100%; /* Ensure it takes the full width within the section */
+  padding: 20px;
+}
+
+/* Team card styling */
+.team-card {
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.team-card:hover {
+  transform: scale(1.05);
+}
+
+.team-card img {
+  width: 100%;
+  height: 250px; /* Fixed height for consistency across cards */
+  object-fit: cover; /* Ensures the image covers the space without distortion */
+  object-position: center center; /* Center the image within the space */
+}
+
+.team-info {
+  padding: 15px;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.team-card:hover .team-info {
+  background-color: #FF1313; /* Light red hover effect */
+  color: #fff;
+}
+
+.team-name, .team-role {
+  margin: 5px 0;
+  transition: color 0.3s ease;
+}
+
+
+/* Responsive Design */
+@media (max-width: 900px) {
+  .team-container {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on medium screens */
+  }
+
+  h1 {
+    font-size: 2rem; /* Smaller font size for the title */
+  }
+}
+
+@media (max-width: 600px) {
+  .team-container {
+    grid-template-columns: 1fr; /* 1 column on small screens */
+  }
+
+  h1 {
+    font-size: 1.5rem; /* Even smaller font size for very small screens */
+  }
+}
 
         </style>
     </head>
@@ -135,10 +291,10 @@ footer {
             <div class="navigation">
                 <ul>
                     <i id="menu-close" class="fa-solid fa-x"></i>
-                    <li><a href="#">Who We Are</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Projects</a></li>
-                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="index.html">Who We Are</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="credential.html">Credential</a></li>
                 </ul>
                 <img id="menu-btn" src="pictures/menu.png" alt="">
             </div>
@@ -151,15 +307,15 @@ footer {
             <div class="info-details-row">
                 <div class="box-icon">
                     <i class="fa-solid fa-location-dot"></i>
-                    <p>Taguig, City</p>
+                    <p>Taguig, Philippines</p>
                 </div>
                 <div class="box-icon">
                     <i class="fa-solid fa-phone"></i>
-                    <p>09XXXXXXXX</p>
+                    <p>0995 826 2117</p>
                 </div>
                 <div class="box-icon">
                     <i class="fa-solid fa-envelope"></i>
-                    <p>Juan@gmail.com</p>
+                    <p>fsdychauco@gmail.com</p>
                 </div>
                 <!--<i class="fa-solid fa-location-dot"></i>
                 <div class="info-detail address">Taguig, City</div>
@@ -178,21 +334,25 @@ footer {
         </section> -->
 
         <section class="history" id="history">
-            <div class="history-content">
-                <div class="text-content">
-                    <h1 class="heading">FSDV CONSTRUCTION COMPANY</h1>
-                    <p>FSDV is a local company that offers innovative solutions in terms of structural strengthening, swimming pool construction, water features, waterproofing, painting and maintenance, residential construction, mechanical and electrical systems. It has the necessary resources to handle medium to big-sized projects with the highly technical and well-equipped professionals who can compete in the global market.</p>
-                </div>
-                <!-- Grid of images on the right side -->
-                <div class="image-grid">
-                    <img src="pictures/const-port.jpg" alt="Project Image 1">
-                    <img src="pictures/bg2.jpg" alt="Project Image 2">
-                    <img src="pictures/bg4.jpg" alt="Project Image 3">
-                    <img src="pictures/const-port1.jpg" alt="Project Image 4">
-                </div>
-            </div>
-        </section>
-
+          <div class="history-content">
+              <div class="text-content">
+                  <h1 class="heading">FSDV CONSTRUCTION COMPANY</h1>
+                  <p>FSDV is a local company that offers innovative solutions in terms of structural strengthening, swimming pool construction, water features, waterproofing, painting and maintenance, residential construction, mechanical and electrical systems. It has the necessary resources to handle medium to big-sized projects with the highly technical and well-equipped professionals who can compete in the global market.</p>
+                  
+                  <!-- See Services Button -->
+                  <a href="services.html" class="see-services-btn">
+                    See Services
+                </a>
+              </div>
+              <!-- Grid of images on the right side -->
+              <div class="image-grid">
+                  <img src="pictures/about-pic3.jpg" alt="Project Image 1">
+                  <img src="pictures/about-pic1.jpg" alt="Project Image 2">
+                  <img src="pictures/about-pic2.jpg" alt="Project Image 3">
+                  <img src="pictures/about-pic4.jpg" alt="Project Image 4">
+              </div>
+          </div>
+      </section>
        
 
         
@@ -239,21 +399,21 @@ footer {
                     <p>First Strong Diversity Construction Services, also know as FSDV Construction Services, emerged from humble beginnings, echoing the experiences of countless other businesses. Since our inception in 2015, we have been dedicated to handling diverse construction projects while concurrently building our company. Drawing upon our collective experiences, we tirelessly pursued prospective clients, working diligently to secure projects and contracts..</p>
                 </div>
                 <div class="image-grid-left">
-                    <img src="pictures/bg5.jpg" alt="Project Image 1">
+                    <img src="pictures/history - 1.jpg" alt="Project Image 1">
                 </div>
             </div>
         
             <div class="timeline-content">
-                <!-- Second Content: Images on the right -->
-                <div class="image-grid-right">
-                    <img src="pictures/bg2.jpg" alt="Project Image 1">
-                </div>
                 <div class="text-content">
                     <h1>Crafting a Future Through Diversity and Hard Work</h1>
                     <p>Our portfolio expanded to encompass diverse projects, including fit-out assignments and notable collaborations with well-known brands like Mcdonald’s. Additionally, our proficiency extends to the meticulous renovation of residential buildings and flats alike.       </p>
 
                         <p>In a pivotal step towards formalizing our commitment to professionalism and regulatory compliance, our company completed registration with the Department of Trade and Industry (DTI), and the Bureau of Internal Revenue (BIR) in 2019.
                 </div>
+                                <!-- Second Content: Images on the right -->
+                                <div class="image-grid-right">
+                                  <img src="pictures/history - 2.jpg" alt="Project Image 1">
+                              </div>
             </div>
         
             <div class="timeline-content">
@@ -275,9 +435,9 @@ footer {
                     
                     <!-- Image grid in the middle of the text -->
                     <div class="image-grid-center">
-                        <img src="pictures/const-port.jpg" alt="Project Image 1">
+                        <img src="pictures/history - 3.1.jpg" alt="Project Image 1">
                         <img src="pictures/bg2.jpg" alt="Project Image 2">
-                        <img src="pictures/bg4.jpg" alt="Project Image 3">
+                        <img src="pictures/history - 3.3.jpg" alt="Project Image 3">
                     </div>
             
                     <p>Looking ahead, we are poised for continued growth and success, propelled by the lessons learned from our journey thus far. As we navigate the ever-evolving landscape of the construction industry, we remain committed to maintaining the standards that have defined FSDV Construction Services.</p>
@@ -288,12 +448,12 @@ footer {
 
 
         <section class="company-intro" id="company-intro">
-            <h1 class="heading">FSDV CONSTRUCTION COMENCES</h1>
+            <h1 class="heading">FSDV CONSTRUCTION COMMENCES</h1>
             <div class="company-intro-content">
                 <!-- Two side-by-side images, one with top margin -->
                 <div class="image-gallery">
-                    <img src="pictures/const-port.jpg" alt="Large Project Image" class="img-large">
-                    <img src="pictures/const-port1.jpg" alt="Offset Image" class="img-large offset-img">
+                    <img src="pictures/commences - pic1.jpg" alt="Large Project Image" class="img-large">
+                    <img src="pictures/commences - pic2.jpg" alt="Offset Image" class="img-large offset-img">
                 </div>
         
                 <!-- Text content with bullet points -->
@@ -318,7 +478,7 @@ footer {
 
         <div class="video-container">
             <video autoplay muted loop>
-                <source src="video/Construction Company  Commercial Video.f609.mp4" type="video/mp4">
+                <source src="video/488771208_30098962636369985_5904745297370335556_n.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
             <div class="overlay-text">
@@ -333,36 +493,196 @@ footer {
                 </p>
             </div>
         </div>
+
+        <!--<section class="team-section">
+          <div class="team-slider">
+            <h1>Meet Our Team</h1>
+            <div class="slider-wrapper">
+              <div class="slider-container">
+                <div class="slide">
+                  <div class="card">
+                    <img src="pictures/p-s.jpg" alt="Employee 1">
+                    <h3>Francia S. Espano</h3>
+                    <p>Proprietor</p>
+                  </div>
+                </div>
+                <div class="slide">
+                  <div class="card">
+                    <img src="pictures/s-p1.jpg" alt="Employee 2">
+                    <h3>Ireneo E. Erestian III</h3>
+                    <p>CTO</p>
+                  </div>
+                </div>
+                <div class="slide">
+                  <div class="card">
+                    <img src="pictures/p-s.jpg" alt="Employee 3">
+                    <h3>Kashaira V. Cuadra</h3>
+                    <p>Civil Engineer/Architectural</p>
+                  </div>
+                </div>
+                <div class="slide">
+                  <div class="card">
+                    <img src="pictures/p-s.jpg" alt="Employee 4">
+                    <h3>Abegaile B. Martillano</h3>
+                    <p>Civil Engineer</p>
+                  </div>
+                </div>
+                <div class="slide">
+                  <div class="card">
+                    <img src="pictures/s-p1.jpg" alt="Employee 5">
+                    <h3>John Paul Obinia</h3>
+                    <p>MEPF Engineer</p>
+                  </div>
+                </div>
+                <div class="slide">
+                  <div class="card">
+                    <img src="pictures/s-p1.jpg" alt="Employee 6">
+                    <h3>Rowell Mark G.</h3>
+                    <p>Structural Engineer</p>
+                  </div>
+                </div>
+                <div class="slide">
+                  <div class="card">
+                    <img src="pictures/s-p1.jpg" alt="Employee 7">
+                    <h3>Marvin M. Falible</h3>
+                    <p>Safety/Electrical Engineer</p>
+                  </div>
+                </div>
+                <div class="slide">
+                  <div class="card">
+                    <img src="pictures/s-p1.jpg" alt="Employee 8">
+                    <h3>Ducks Louel Rey</h3>
+                    <p>MEPF Engineer</p>
+                  </div>
+                </div>
+                <div class="slide">
+                  <div class="card">
+                    <img src="pictures/s-p1.jpg" alt="Employee 9">
+                    <h3>Nemar Bagood</h3>
+                    <p>Structural Foreman</p>
+                  </div>
+                </div>
+                <div class="slide">
+                  <div class="card">
+                    <img src="pictures/s-p1.jpg" alt="Employee 10">
+                    <h3>Margelito Gucor</h3>
+                    <p>Structural Foreman</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+            <button class="next" onclick="moveSlide(1)">&#10095;</button>
+          </div>
+        </section>-->
+
+        <section class="team-section1">
+          <h1 class="team">Meet Our People</h1>
+          <div class="team-container">
+            <div class="team-card">
+              <img src="pictures/p-s.jpg" alt="Team Member 1">
+              <div class="team-info">
+                <h3 class="team-name">Francia S. Espano</h3>
+                <p class="team-role">Proprietor</p>
+              </div>
+            </div>
+            <div class="team-card">
+              <img src="pictures/s-p1.jpg" alt="Team Member 2">
+              <div class="team-info">
+                <h3 class="team-name">Ireneo E. Erestian III</h3>
+                <p class="team-role">CTO</p>
+              </div>
+            </div>
+            <div class="team-card">
+              <img src="pictures/our people.jpg" alt="Team Member 3">
+              <div class="team-info">
+                <h3 class="team-name">Kashaira V. Cuadra</h3>
+                <p class="team-role">Civil Engineer/Architectural</p>
+              </div>
+            </div>
+            <div class="team-card">
+              <img src="pictures/our people.jpg" alt="Team Member 4">
+              <div class="team-info">
+                <h3 class="team-name">Abegaile B. Martillano</h3>
+                <p class="team-role">Civil Engineer</p>
+              </div>
+            </div>
+            <div class="team-card">
+              <img src="pictures/our people.jpg" alt="Team Member 5">
+              <div class="team-info">
+                <h3 class="team-name">John Paul Obinia</h3>
+                <p class="team-role">MEPF Engineer</p>
+              </div>
+            </div>
+            <div class="team-card">
+              <img src="pictures/our people.jpg" alt="Team Member 6">
+              <div class="team-info">
+                <h3 class="team-name">Rowell Mark G.</h3>
+                <p class="team-role">Structural Engineer</p>
+              </div>
+            </div>
+            <div class="team-card">
+              <img src="pictures/our people.jpg" alt="Team Member 7">
+              <div class="team-info">
+                <h3 class="team-name">Marvin M. Falible</h3>
+                <p class="team-role">Safety/Electrical Engineer</p>
+              </div>
+            </div>
+            <div class="team-card">
+              <img src="pictures/our people.jpg" alt="Team Member 8">
+              <div class="team-info">
+                <h3 class="team-name">Ducks Louel Rey</h3>
+                <p class="team-role">MEPF Engineer</p>
+              </div>
+            </div>
+            <div class="team-card">
+              <img src="pictures/our people.jpg" alt="Team Member 9">
+              <div class="team-info">
+                <h3 class="team-name">Nemar Bagood</h3>
+                <p class="team-role">Structural Foreman</p>
+              </div>
+            </div>
+            <div class="team-card">
+              <img src="pictures/our people.jpg" alt="Team Member 10">
+              <div class="team-info">
+                <h3 class="team-name">Margelito Gucor</h3>
+                <p class="team-role">Structural Foreman</p>
+              </div>
+            </div>
+          </div>
+        </section>
+        
+                
         
         <footer>
             <div class="footer-container">
                 <div class="footer-logo">
                     <img src="pictures/logobgd.jpg" alt="Company Logo">
                     <div class="social-icons">
-                        <a href="https://facebook.com" target="_blank">
-                            <i class="fa-brands fa-facebook"></i>
-                        </a>
-                        <a href="mailto:info@company.com">
-                            <i class="fa-solid fa-envelope"></i>
-                        </a>
-                    </div>
+                      <a href="https://www.facebook.com/people/FSDV-Construction-Services/100066406575267/" target="_blank">
+                          <i class="fa-brands fa-facebook"></i>
+                      </a>
+                      <a href="mailto:fsdychauco@gmail.com">
+                          <i class="fa-solid fa-envelope"></i>
+                      </a>
+                  </div>
                 </div>
         
                 <div class="footer-links">
                     <h3>Quick Links</h3>
                     <ul>
-                        <li><a href="#">Who We Are</a></li>
-                        <li><a href="#">Services</a></li>
-                        <li><a href="#">Projects</a></li>
-                        <li><a href="#">Contact Us</a></li>
+                      <li><a href="index.html">Who We Are</a></li>
+                      <li><a href="services.html">Services</a></li>
+                      <li><a href="projects.html">Projects</a></li>
+                      <li><a href="credential.html">Creential</a></li>
                     </ul>
                 </div>
         
                 <div class="footer-contact">
                     <h3>Contact Us</h3>
-                    <p>Email: <a href="mailto:info@company.com">info@company.com</a></p>
-                    <p>Phone: +123 456 7890</p>
-                    <p>Address: 123 Street, City, Country</p>
+                    <p>Email: <a href="mailto:info@company.com">fsdychauco@gmail.com</a></p>
+                    <p>Phone: 0995-826-2117</p>
+                    <p>Address: Taguig, Philippines</p>
                 </div>
             </div>
         
@@ -438,7 +758,7 @@ footer {
 
 
 
-            let currentPage = 1;
+           /* let currentPage = 1;
         const totalPages = 3;
 
         function updatePage() {
@@ -461,7 +781,29 @@ footer {
                 currentPage--;
                 updatePage();
             }
-        });
+        });*/
+        let slideIndex = 0;
+
+function showSlides() {
+  const slides = document.querySelectorAll('.slide');
+  if (slideIndex >= slides.length) {
+    slideIndex = 0; // Reset to the first slide if the index exceeds the number of slides
+  }
+  if (slideIndex < 0) {
+    slideIndex = slides.length - 1; // Loop to the last slide if the index is negative
+  }
+  const offset = -slideIndex * 100; // Each slide takes up 100% of the width
+  document.querySelector('.slider-container').style.transform = `translateX(${offset}%)`;
+}
+
+function moveSlide(step) {
+  slideIndex += step;
+  showSlides();
+}
+
+showSlides(); // Initialize the first slide
+
+
         </script>
 
 

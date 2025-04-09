@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>FSDV Sample</title>
+
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+        <link rel="icon" href="pictures/logo.png" type="images/FSDV">
+
+
+        <link rel="stylesheet" href="style.css">
+
+        <!--<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>-->
+
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/scrollreveal"></script>
+
+
+         <style>
+        .product-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .product {
+            background-color: white;
+            padding: 10px;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .product img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .product h3 {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .product p {
+            font-size: 14px;
+            color: #777;
+        }
+
+        /* Responsive design */
+        @media (max-width: 1024px) {
+            .product-container {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .product-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .product-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+
+</style>   
+
+    </head>
+
+    <body>
+
+        <nav>
+            <img src="pictures/logo.png" alt="">
+            <div class="navigation">
+                <ul>
+                    <i id="menu-close" class="fa-solid fa-x"></i>
+                    <li><a href="index.html">Who We Are</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="credential.html">Credential</a></li>
+                </ul>
+                <img id="menu-btn" src="pictures/menu.png" alt="">
+            </div>
+        </nav>
+
+        <div class="image-container">
+            <img src="pictures/bg2.jpg" alt="Construction Company Vision" class="banner-image"/>
+            <div class="overlay-text-img">
+                <h2>Products</h2>
+            </div>
+        </div>
+            
+      
+        
+        <div class="product-container">
+            <div class="product">
+                <img src="https://via.placeholder.com/300x200" alt="CretePaver">
+                <h3>CretePaver</h3>
+                <p>A high-performance product for creating durable paving solutions.</p>
+            </div>
+            <div class="product">
+                <img src="https://via.placeholder.com/300x200" alt="Aqua Patch">
+                <h3>Aqua Patch</h3>
+                <p>Advanced repair solutions for water-related damages in concrete.</p>
+            </div>
+            <div class="product">
+                <img src="https://via.placeholder.com/300x200" alt="Trulink Energy Corp.">
+                <h3>Trulink Energy Corp.</h3>
+                <p>Leading provider of energy-efficient solutions for industries.</p>
+            </div>
+            <div class="product">
+                <img src="https://via.placeholder.com/300x200" alt="Light Strong">
+                <h3>Light Strong</h3>
+                <p>Durable and lightweight materials for construction projects.</p>
+            </div>
+    
+            <div class="product">
+                <img src="https://via.placeholder.com/300x200" alt="Cetco">
+                <h3>Cetco</h3>
+                <p>Innovative solutions for water management and environmental protection.</p>
+            </div>
+            <div class="product">
+                <img src="https://via.placeholder.com/300x200" alt="Shosesik Ako">
+                <h3>Shosesik Ako</h3>
+                <p>A brand known for high-quality industrial tools and accessories.</p>
+            </div>
+            <div class="product">
+                <img src="https://via.placeholder.com/300x200" alt="NKS">
+                <h3>NKS</h3>
+                <p>Providing advanced equipment and machinery for various sectors.</p>
+            </div>
+            <div class="product">
+                <img src="https://via.placeholder.com/300x200" alt="Greenseal">
+                <h3>Greenseal</h3>
+                <p>Environmental solutions focused on sustainability and eco-friendly practices.</p>
+            </div>
+    
+            <div class="product">
+                <img src="https://via.placeholder.com/300x200" alt="Kansai Paints">
+                <h3>Kansai Paints</h3>
+                <p>A leading manufacturer of high-quality paints for residential and commercial use.</p>
+            </div>
+            <div class="product">
+                <img src="https://via.placeholder.com/300x200" alt="Mizutani">
+                <h3>Mizutani</h3>
+                <p>Renowned for precision tools and equipment in various industries.</p>
+            </div>
+        </div>
+          
+
+
+        <footer>
+            <div class="footer-container">
+                <div class="footer-logo">
+                    <img src="pictures/logobgd.jpg" alt="Company Logo">
+                    <div class="social-icons">
+                        <a href="https://facebook.com" target="_blank">
+                            <i class="fa-brands fa-facebook"></i>
+                        </a>
+                        <a href="mailto:info@company.com">
+                            <i class="fa-solid fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+        
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Who We Are</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+        
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <p>Email: <a href="mailto:info@company.com">info@company.com</a></p>
+                    <p>Phone: +123 456 7890</p>
+                    <p>Address: 123 Street, City, Country</p>
+                </div>
+            </div>
+        
+            <div class="footer-bottom">
+                <p>&copy; 2025 FSDV | All Rights Reserved</p>
+            </div>
+        </footer>
+
+        <!-- Navigation -->
+
+        <!-- Home -->
+
+        <!-- Courses -->
+
+        <!-- footer -->
+
+        <script>
+            window.addEventListener("scroll", function(){
+                       var header = document.querySelector("nav");
+                       header.classList.toggle('sticky', window.scrollY > 0);
+                   });
+           
+           
+           
+                       // Navaigation Bar
+                       $('#menu-btn').click(function(){
+                           $('nav .navigation ul').addClass('active')
+                       });
+                       $('#menu-close').click(function(){
+                           $('nav .navigation ul').removeClass('active')
+                       });
+           
+                       document.addEventListener("DOMContentLoaded", function () {
+               // Create an IntersectionObserver to detect when the images are in the viewport
+               const images = document.querySelectorAll(".image-grid img");
+           
+               // Create the intersection observer
+               const observer = new IntersectionObserver(
+                   (entries, observer) => {
+                       entries.forEach((entry) => {
+                           if (entry.isIntersecting) {
+                               // Add 'visible' class to images when they come into view
+                               entry.target.classList.add("visible");
+                               observer.unobserve(entry.target); // Stop observing the image after it's in view
+                           }
+                       });
+                   },
+                   {
+                       threshold: 0.5, // Trigger when 50% of the image is in the viewport
+                   }
+               );
+           
+               // Observe each image in the image grid
+               images.forEach((image) => {
+                   observer.observe(image);
+               });
+           });
+           
+                       ScrollReveal({ 
+                           reset: true,
+                           distance: '60px',
+                           duration: 2000,
+                           delay: 400
+                       });
+           
+                       ScrollReveal().reveal('.heading', { delay: 200, origin: 'left' });
+                       ScrollReveal().reveal('.text-content', { delay: 400, origin: 'bottom' });
+           
+
+
+                   // Get all tab elements
+    const tabs = document.querySelectorAll('.tab');
+    const contents = document.querySelectorAll('.tabs-content');
+
+    // Add event listeners to tabs
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        // Remove active class from all tabs and contents
+        tabs.forEach(t => t.classList.remove('active'));
+        contents.forEach(c => c.classList.remove('active'));
+
+        // Add active class to the clicked tab and corresponding content
+        tab.classList.add('active');
+        document.querySelector(`.${tab.dataset.tab}`).classList.add('active');
+      });
+    });
+                   </script>
+
+    </body>
+
+</html>
