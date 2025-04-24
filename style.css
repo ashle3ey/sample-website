@@ -14,7 +14,7 @@ body {
 /* Global Tags */
 
 h1 {
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: 700;
   color: rgb(35, 35, 85);
 }
@@ -27,6 +27,12 @@ span {
 h6 {
   font-size: 1.1rem;
   color: rgb(24, 24, 49);
+}
+
+p {
+  font-size: 1.1rem;
+  line-height: 1.6;;
+margin-bottom: 25px;
 }
 
 
@@ -51,7 +57,7 @@ nav.sticky .navigation ul li a{
   font-weight: 500;
   transition: 0.3s ease;
   font-family: "Poppins", sans-serif;
-  font-size: 20px;
+  font-size: 18px;
   line-height: 30px;
 }
 
@@ -96,7 +102,7 @@ nav .navigation ul li a{
   font-weight: 500;
   transition: 0.3s ease;
   font-family: "Poppins", sans-serif;
-  font-size: 20px;
+  font-size: 18px;
   line-height: 30px;
   position: relative;
   padding-bottom: 5px;
@@ -123,7 +129,7 @@ nav .navigation ul li a:hover::after {
 
 /* Home */
 #home{
-  background-image: linear-gradient(rgba(9, 5, 54, 0.3), rgba(5, 4, 46, 0.7)), url("pictures/bg4.jpg");
+  background-image: linear-gradient(rgba(80, 80, 171, 0.3), rgba(65, 62, 106, 0.7)), url("pictures/slide-bg3.png");
   width: 100%;
   height: 100vh;
   background-size: cover;
@@ -157,6 +163,7 @@ nav .navigation ul li a:hover::after {
   color: #fff;
   font-size: 4rem;
   letter-spacing: 1px;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
 }
 
 #home p{
@@ -196,7 +203,8 @@ nav .navigation ul li a:hover::after {
 #home .box-icon i {
   margin-right: 10px;
   font-size: 18px; /* Icon size */
-  color: #333; /* Icon color */
+  color: #a88538
+
 }
 
 #home .box-icon p {
@@ -259,19 +267,19 @@ video {
 }
 
 .history .heading {
-  font-size: 50px;
+  font-size: 40px;
   color: rgb(21, 21, 100);
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 .heading {
-  font-size: 50px;
+  font-size: 40px;
   color: rgb(21, 21, 100);
   margin-bottom: 20px;
 }
 
 .history p {
-  font-size: 1.2rem;
+  font-size: 1rem;
   line-height: 1.6;;
   color: #444;
   line-height: 1.6;
@@ -316,6 +324,7 @@ margin-bottom: 25px;
   align-items: center;
   margin: 20px 0;
   flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+  background-color: #e2e2e2;
 }
 
 /* Style for the text content */
@@ -378,7 +387,7 @@ margin-bottom: 25px;
 justify-content: space-between;
 align-items: center;
 padding: 50px 20px;
-background-color: #f8f8f8;
+background-color: #fff;
 flex-wrap: wrap; /* Allow wrapping on smaller screens */
       }
 
@@ -468,7 +477,7 @@ gap: 30px; /* Add spacing between the text and the image grid */
   align-items: flex-start; /* Align images to the top */
   gap: 30px;
   flex: 1;
-  max-width: 50%;
+  max-width: 40%;
 }
 
 /* Common styles for both images */
@@ -588,6 +597,7 @@ gap: 30px; /* Add spacing between the text and the image grid */
 .overlay-text p {
   font-size: 1.2rem;
   line-height: 1.6;
+  color: #fff;
 }
 
 
@@ -1223,7 +1233,7 @@ padding: 50px 0;
 .service {
 position: relative;
 width: 100%;
-max-width: 400px;
+max-width: 350px;
 margin-bottom: 30px;
 overflow: hidden;
 }
@@ -1263,7 +1273,7 @@ border-radius: 10px;
 }
 
 .overlay-services h3 {
-font-size: 1.4rem;
+font-size: 1.2rem;
 margin-bottom: 10px;
 }
 
@@ -1457,15 +1467,16 @@ box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 /* Section Styles */ 
 .image-section {
   padding: 40px;
-  background-color: #f9f9f9; /* Optional: Light background for the section */
+  background-color: #e2e2e2; /* Optional: Light background for the section */
   text-align: center; /* Optional: Center align text */
 }
 
 .image-section p {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   line-height: 25px;
   color: black;
   margin-bottom: 30px; /* Space below the description */
+  font-weight: 500;
 }
 
 .image-grid2 {
@@ -1484,9 +1495,13 @@ box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 
 .image-item img {
   width: 100%;
-  height: auto;
+  height: auto; /* Allow natural height based on aspect ratio */
   display: block;
   transition: transform 0.3s ease;
+}
+
+.image-item a {
+  display: block;
 }
 
 /* Overlay effect on hover */
@@ -1531,6 +1546,35 @@ box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 
 .image-item:hover .overlay-text1 {
   opacity: 1; /* Show text on hover */
+}
+
+/* Lightbox styles */
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.9);
+  justify-content: center;
+  align-items: center;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 10px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  color: white;
+  font-size: 3rem;
+  cursor: pointer;
+  z-index: 1000;
 }
 
 /* Media query for responsiveness (1 image per row on small screens) */
